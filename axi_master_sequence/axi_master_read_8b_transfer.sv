@@ -30,9 +30,10 @@ task axi_master_read_8b_transfer::body();
   super.body();
   
   start_item(req);
-  if(!req.randomize() with {req.arsize == READ_1_BYTES;
-                            req.tx_type == READ;
-                            req.arburst == READ_INCR;}) begin
+  if(!req.randomize() with {req.s_axi_arsize == READ_1_BYTES;
+                            req.s_axi_arvalid == 1;
+                            req.s_axi_awvalid == 0;
+                            req.s_axi_arburst == READ_INCR;}) begin
 
     `uvm_fatal("axi4","Rand failed");
   end
