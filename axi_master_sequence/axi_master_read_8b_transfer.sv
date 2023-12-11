@@ -30,7 +30,7 @@ task axi_master_read_8b_transfer::body();
   super.body();
   
   start_item(req);
-  if(!req.randomize() with {req.s_axi_arsize == READ_1_BYTES;
+  if(!req.randomize() with {req.s_axi_arsize == READ_1_BYTE;
                             req.s_axi_arvalid == 1;
                             req.s_axi_awvalid == 0;
                             req.s_axi_arburst == READ_INCR;}) begin
