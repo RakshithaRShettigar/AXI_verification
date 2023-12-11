@@ -79,7 +79,7 @@ end
 //READ
 if(req.s_axi_arburst == 0) begin
   if(req.s_axi_rresp == OKAY) begin
-    read_success[s_axi_araddr] = s_axi_rddata[s_axi_arlen];
+    read_success[req.s_axi_araddr] = req.s_axi_rddata[s_axi_arlen];
     foreach(write_success[i]) begin
       if(read_success.exits(i))begin
         read_success[i] == write_success[i];
@@ -96,17 +96,17 @@ if(req.s_axi_arburst == 0) begin
    end */
 end
 else if(s_axi_arburst == 1) begin
-  temp_read.push(s_axi_araddr);
-  for(int i = 1; i <= s_axi_arlen; i++) begin
-    burst_size = 2**s_axi_arsize;
-    temp_read.push(s_axi_araddr + (temp_read.size())*burst_size);
+  temp_read.push(req.s_axi_araddr);
+  for(int i = 1; i <= req.s_axi_arlen; i++) begin
+    burst_size = 2**req.s_axi_arsize;
+    temp_read.push(req.s_axi_araddr + (temp_read.size())*burst_size);
    end
-   if(s_axi_rresp == OKAY) begin
+  if(req.s_axi_rresp == OKAY) begin
         for(int i = 0; i <= s_axi_arlen; i++) begin
-          read_success[temp_read.pop_front()] = s_axi_rddata[i];
+          read_success[temp_read.pop_front()] = req.s_axi_rddata[i];
         end
- /*  else if(s_axi_rresp == SLVERR) begin
-        read_fail[temp_read.pop_front()] = s_axi_rddata[i];
+    /*  else if(req.s_axi_rresp == SLVERR) begin
+        read_fail[temp_read.pop_front()] = req.s_axi_rddata[i];
    end */
 end
   
