@@ -32,9 +32,10 @@ task axi_master_write_8b_transfer::body();
   `uvm_info(get_type_name(), $sformatf("DEBUG_MSHA :: BEFORE axi_master_write_8b_transfer"), UVM_NONE); 
 
   start_item(req);
-  if(!req.randomize() with {req.awsize == WRITE_1_BYTE;
-                              req.tx_type == WRITE;
-                              req.awburst == WRITE_INCR;}) begin
+  if(!req.randomize() with {req.s_axi_awsize == WRITE_1_BYTE;
+                            req.s_axi_arvalid == 0;
+                            req.s_axi_awvalid == 1;
+                            req.awburst == WRITE_INCR;}) begin
     `uvm_fatal("axi4","Rand failed");
   end 
   finish_item(req);
