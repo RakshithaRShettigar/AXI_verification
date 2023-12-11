@@ -5,7 +5,7 @@
 
 class axi_master_agent extends uvm_agent;
 
-  //Factory registration 
+  //Factory registration  
   `uvm_component_utils(axi_master_agent)
 
 
