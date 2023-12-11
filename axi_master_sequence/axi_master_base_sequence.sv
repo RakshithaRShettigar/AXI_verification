@@ -1,3 +1,5 @@
+`ifndef AXI_MASTER_BASE_SEQ_INCLUDED_
+`define AXI_MASTER_BASE_SEQ_INCLUDED_
 //--------------------------------------------------------------------------------------------
 // Class : axi_master_base_sequence
 // Creating master_base_seq extends from uvm_sequence
@@ -23,3 +25,5 @@ endclass : axi_master_base_sequence
 function axi_master_base_sequence::new(string name = "axi_master_base_sequence");
   super.new(name);
 endfunction : new
+
+`endif
