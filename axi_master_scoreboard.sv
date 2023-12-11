@@ -38,8 +38,8 @@ endfunction: new
 //DECLARE ASSOCIATIVE ARRAY OF INDEX INT TYPE
 bit[127:0] write_success[int];
 bit[127:0] read_success[int];
-bit[127:0] write_fail[int];
-bit[127:0] read_fail[int];
+//bit[127:0] write_fail[int];
+//bit[127:0] read_fail[int];
 
 int temp_write[$];
 int temp_read[$];
