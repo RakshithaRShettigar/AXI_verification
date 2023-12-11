@@ -11,7 +11,7 @@ class axi_master_agent extends uvm_agent;
 
   //Handles for the driver, monitor, sequencer
    axi_master_driver axi_drv_h;
-  axi_master_monitor axi_mon_h;
+  axi_master_monitor axi_master_mon_h;
   axi_master_sequencer axi_seqr_h;
 
 
@@ -51,7 +51,7 @@ function void axi_master_agent::build_phase(uvm_phase phase);
 
   //Passive UVM Agent only Monitor is created
 
-  m_mon = axi_master_monitor::type_id::create("m_mon", this);
+  axi_master_mon_h = axi_master_monitor::type_id::create("axi_master_mon_h", this);
 
   //For Active UVM Agent monitor class is created along with the Sequencer and Driver but for the
 
