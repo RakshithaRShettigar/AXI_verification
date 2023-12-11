@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------------------
 
 parameter OKAY=0;
-parameter SLVERR=1;
+//parameter SLVERR=1;
 
 // AXI MASTER SCOREBOARD IS THE USER DEFINED CLASS WHICH EXTENDS FROM UVM SCOREBOARD (PREDEFINED SCOREBOARD CLASS)
 class axi4_master_scoreboard extends uvm_scoreboard;
