@@ -13,8 +13,7 @@ virtual axi_master_interface vif;
 axi_master_sequence_item req_op;
 
 //Declaring 5 analysis ports to put 5 channel signals to 5 different FIFOs in scoreboard
-uvm_analysis_port#(axi4_master_tx) axi4_master_write_analysis_port;
-uvm_analysis_port#(axi4_master_tx) axi4_master_read_analysis_port;
+  uvm_analysis_port#(axi4_master_sequence_item) axi4_master_analysis_port;
 
 //Different methods present in the class that are defined outside class using extern keyword
 extern function new(string name = "axi4_master_monitor_proxy", uvm_component parent = null);
@@ -29,8 +28,7 @@ endclass : axi_master_monitor_
 //Function: class constructor
 function axi_master_monitor::new(string name = "axi_master_monitor", uvm_component parent = null);
   super.new(name, parent)
-  axi4_master_read_analysis_port   = new("axi4_master_read_analysis_port",this);
-  axi4_master_write_analysis_port  = new("axi4_master_write_analysis_port",this);
+  axi4_master_analysis_port   = new("axi4_master_read_analysis_port",this);
 endfunction : new
 
 //Function: Build phase
@@ -48,10 +46,11 @@ endfunction : connect_phase
 
 //Task: run phase
 task axi_master_monitor::run_phase(uvm_phase phase);
-  if(vif.aresetn) begin
+  forever begin : FOREVER
+    if(!vif.aresetn) begin : LOW_RESET
     fork  //to ensure both read and write signals are monitored parallely
-      begin
-        forever begin
+      begin : 
+        //forever begin
           fork 
             begin
               //Taking data of write address channel
@@ -71,7 +70,7 @@ task axi_master_monitor::run_phase(uvm_phase phase);
             begin
               static int i;
               //Taking data of write data channel
-              forever begin
+              //forever begin
               do begin
                 @(posedge vif.m_mp.clk);
               end
@@ -85,7 +84,7 @@ task axi_master_monitor::run_phase(uvm_phase phase);
                   break;
                 end
                   i++;
-              end
+              //end
             end   
           join
           begin
@@ -98,11 +97,11 @@ task axi_master_monitor::run_phase(uvm_phase phase);
          req_op.bresp    = bresp;
           end
          
-        end
+        //end
       end
-
+//READ
         begin
-          forever begin
+         // forever begin
             //Taking data of read address channel
               do begin
                 @(posedge vif.m_mp.clk);
@@ -119,7 +118,7 @@ task axi_master_monitor::run_phase(uvm_phase phase);
         
               static int j;
               //Taking data of read data channel
-              forever begin
+              //forever begin
               do begin
                 @(posedge vif.m_mp.clk);
               end
