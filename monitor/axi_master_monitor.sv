@@ -49,10 +49,9 @@ task axi_master_monitor::run_phase(uvm_phase phase);
   forever begin : FOREVER
     if(!vif.aresetn) begin : LOW_RESET
     fork  //to ensure both read and write signals are monitored parallely
-      begin : 
-        //forever begin
+      begin : WRITE_PROCESS
           fork 
-            begin
+            begin : WRITE_ADDRESS
               //Taking data of write address channel
               do begin
                 @(posedge vif.m_mp.clk);
@@ -66,8 +65,9 @@ task axi_master_monitor::run_phase(uvm_phase phase);
               req_op.awlock  = vif.m_mp.m_cb.awlock;
               req_op.awcache = vif.m_mp.m_cb.awcache;
               req_op.awprot  = vif.m_mp.m_cb.awprot;
-            end
-            begin
+            end : WRITE_ADDRESS
+            
+            begin : WRITE_DATA
               static int i;
               //Taking data of write data channel
               //forever begin
@@ -84,10 +84,9 @@ task axi_master_monitor::run_phase(uvm_phase phase);
                   break;
                 end
                   i++;
-              //end
-            end   
+            end : WRITE_DATA  
           join
-          begin
+          begin : WRITE_RESPONSE
           //Taking data of write response channel
           do begin
             @(posedge vif.m_mp.clk);
@@ -95,13 +94,10 @@ task axi_master_monitor::run_phase(uvm_phase phase);
           while(vif.m_mp.m_cb.bvalid != 1 && bready != 1);
          req_op.bid      = bid;
          req_op.bresp    = bresp;
-          end
-         
-        //end
-      end
-//READ
-        begin
-         // forever begin
+          end : WRITE_RESPONSE   
+      end : WRITE_PROCESS
+      
+        begin : READ_PROCESS
             //Taking data of read address channel
               do begin
                 @(posedge vif.m_mp.clk);
@@ -118,7 +114,6 @@ task axi_master_monitor::run_phase(uvm_phase phase);
         
               static int j;
               //Taking data of read data channel
-              //forever begin
               do begin
                 @(posedge vif.m_mp.clk);
               end
@@ -133,10 +128,10 @@ task axi_master_monitor::run_phase(uvm_phase phase);
                   break;
                 end
                   j++;
-              end
+              end : READ_PROCESS
             
-          end
-        end
+          end : LOW_RESET
+        end : FOREVER
     join_any
      axi4_master_analysis_port.write(req_op);
     wait fork;
