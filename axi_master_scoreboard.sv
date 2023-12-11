@@ -117,7 +117,7 @@ endfunction
       if(read_sucess.exits(i)) begin
         read_sucess[i] != write_failure[i];
         failure++;
-        //display;
+        //display; */
        
       
     
