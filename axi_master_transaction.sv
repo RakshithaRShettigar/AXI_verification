@@ -4,7 +4,7 @@
 //--------------------------------------------------------------------------------------------
 
 class axi_master_transaction extends uvm_sequence_item;
-  `uvm_object_utils(axi_master_transaction)
+  `uvm_object_utils(axi_master_treansaction)
   
   //-----------------Declaration of signals-----------------
   
@@ -14,7 +14,7 @@ class axi_master_transaction extends uvm_sequence_item;
   rand bit [ID_WIDTH-1:0]    s_axi_awid;
   rand bit [ADDR_WIDTH-1:0]  s_axi_awaddr;
   rand bit [7:0]             s_axi_awlen;
-  rand bit [2:0]             s_axi_awsize;
+  rand awsize_e              s_axi_awsize;
   rand bit [1:0]             s_axi_awburst;
   rand bit                   s_axi_awlock;
   rand bit [3:0]             s_axi_awcache;
@@ -42,7 +42,7 @@ class axi_master_transaction extends uvm_sequence_item;
   rand bit [ID_WIDTH-1:0]    s_axi_arid;
   rand bit [ADDR_WIDTH-1:0]  s_axi_araddr;
   rand bit [7:0]             s_axi_arlen;
-  rand bit [2:0]             s_axi_arsize;
+  rand arsize_e              s_axi_arsize;
   rand bit [1:0]             s_axi_arburst;
   rand bit                   s_axi_arlock;
   rand bit [3:0]             s_axi_arcache;
@@ -128,12 +128,10 @@ constraint write_strobe_c2 {s_axi_wstrb.size() == s_axi_awlen + 1;}
  
   //Constraint : write_strobe_c3
   //This constraint is used to decide the s_axi_awdata size based on s_axi_awsize
-constraint write_strobe_c3{if(s_axi_awsize == 32'd8)
+  constraint write_strobe_c3{if(s_axi_awsize == WRITE_1_BYTE)
   						$countones (s_axi_wstrb) == 1;
-                             else if(s_axi_awsize == 32'd16)
+                             else if(s_axi_awsize == WRITE_2_BYTE)
                                     $countones (s_axi_wstrb) == 2;
-                              else if(s_axi_awsize == 32'd24)
-                                    $countones (s_axi_wstrb) == 3;
                               else 
                                   $countones (s_axi_wstrb) == 4;
                              }
