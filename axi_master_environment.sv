@@ -1,3 +1,8 @@
+`ifndef AXI_MASTER_ENVIRONMENT_INCLUDED_
+`define AXI_MASTER_ENVIRONMENT_INCLUDED_
+
+
+
 `include "axi_master_agent.sv"
 `include "axi_master_scoreboard.sv"
 `include "axi_master_coverage.sv"
