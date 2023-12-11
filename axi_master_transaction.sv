@@ -4,7 +4,7 @@
 //--------------------------------------------------------------------------------------------
 
 class axi_master_transaction extends uvm_sequence_item;
-  `uvm_object_utils(axi_master_treansaction)
+  `uvm_object_utils(axi_master_transaction)
   
   //-----------------Declaration of signals-----------------
   
