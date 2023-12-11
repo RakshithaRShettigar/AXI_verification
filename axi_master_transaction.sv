@@ -11,14 +11,14 @@ class axi_master_transaction extends uvm_sequence_item;
   //-------------------------------------------------------
   // WRITE ADDRESS CHANNEL SIGNALS
   //------------------------------------------------------- 
-  rand bit [ID_WIDTH-1:0]    s_axi_awid;
+  rand awid_e            s_axi_awid;
   rand bit [ADDR_WIDTH-1:0]  s_axi_awaddr;
   rand bit [7:0]             s_axi_awlen;
   rand awsize_e              s_axi_awsize;
-  rand bit [1:0]             s_axi_awburst;
-  rand bit                   s_axi_awlock;
-  rand bit [3:0]             s_axi_awcache;
-  rand bit [2:0]             s_axi_awprot;
+  rand awburst_e             s_axi_awburst;
+  rand awlock_e              s_axi_awlock;
+  rand awcache_e             s_axi_awcache;
+  rand awprot_e              s_axi_awprot;
   rand bit                   s_axi_awvalid;
   bit                        s_axi_awready;
   //-------------------------------------------------------
@@ -32,27 +32,27 @@ class axi_master_transaction extends uvm_sequence_item;
   //-------------------------------------------------------
   // WRITE RESPONSE CHANNEL SIGNALS
   //-------------------------------------------------------
-  bit [ID_WIDTH-1:0]         s_axi_bid;
-  bit [1:0]                  s_axi_bresp;
+  bid_e                      s_axi_bid;
+  bresp_e                    s_axi_bresp;
   bit                        s_axi_bvalid;
   rand bit                   s_axi_bready;
   //-------------------------------------------------------
   // READ ADDRESS CHANNEL SIGNALS
   //-------------------------------------------------------
-  rand bit [ID_WIDTH-1:0]    s_axi_arid;
+  rand arid_e                s_axi_arid;
   rand bit [ADDR_WIDTH-1:0]  s_axi_araddr;
   rand bit [7:0]             s_axi_arlen;
   rand arsize_e              s_axi_arsize;
-  rand bit [1:0]             s_axi_arburst;
-  rand bit                   s_axi_arlock;
-  rand bit [3:0]             s_axi_arcache;
-  rand bit [2:0]             s_axi_arprot;
+  rand arburst_e             s_axi_arburst;
+  rand arlock_e              s_axi_arlock;
+  rand arcache_e             s_axi_arcache;
+  rand arprot_e              s_axi_arprot;
   rand bit                   s_axi_arvalid;
   bit                        s_axi_arready;
   //-------------------------------------------------------
   // READ DATA CHANNEL SIGNALS 
   //-------------------------------------------------------
-  bit [ID_WIDTH-1:0]         s_axi_rid;
+  rid_e                      s_axi_rid;
   bit [DATA_WIDTH-1:0]       s_axi_rdata;
   bit [1:0]                  s_axi_rresp;
   bit                        s_axi_rlast;
@@ -110,9 +110,9 @@ class axi_master_transaction extends uvm_sequence_item;
  
   
   //constraint to select burt length based on burst type
-  constraint burst_length_select_c2 { if(s_axi_awburst==e_WRAP)
+  constraint burst_length_select_c2 { if(s_axi_awburst== WRITE_FIXED)
                                     s_axi_awlen inside{[0:15]};
-                                    else if (s_axi_awburst==e_INCR)
+                                     else if (s_axi_awburst== WRITE_INCR)
                                     s_axi_awlen inside{[0:255]};}
  
  // WRITE DATA Constraints
@@ -140,13 +140,11 @@ constraint write_strobe_c2 {s_axi_wstrb.size() == s_axi_awlen + 1;}
 //constraint for aligned read address
  constraint alligned_read_address {  soft s_axi_araddr  == (s_axi_araddr % (2**s_axi_arsize )==0);}
 
-// constraint for read burst type
-constraint read_burst_type { s_axi_arburst inside { 2’b00, 2’b01};}
 
 //constraint for read burst length
-constraint read_burst_length { if(  s_axi_arburst == ( 2’b00 ) 
+  constraint read_burst_length { if(  s_axi_arburst == READ_FIXED 
                                                     s_axi_arlen  inside { [ 0 : 15] } ;
-                                                   else if s_axi_arburst == 2’b10
+                                                   else if s_axi_arburst == READ_INCR
                                                        s_axi_arlen  inside { [0:255]}; }  
   
   
