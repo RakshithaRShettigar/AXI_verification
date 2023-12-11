@@ -1,4 +1,4 @@
-module axi_top;
+module axi_mtop;
 
 import uvm_pkg::*;
 import axi_test_pkg::*;
