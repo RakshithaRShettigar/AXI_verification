@@ -4,7 +4,7 @@
 //--------------------------------------------------------------------------------------------
 
 class axi_master_transaction extends uvm_sequence_item;
-  `uvm_object_utils(axi_master_treansaction)
+  `uvm_object_utils(axi_master_transaction)
   
   //-----------------Declaration of signals-----------------
   
@@ -24,8 +24,8 @@ class axi_master_transaction extends uvm_sequence_item;
   //-------------------------------------------------------
   // WRITE DATA CHANNEL SIGNALS
   //-------------------------------------------------------
-  rand bit [DATA_WIDTH-1:0]  s_axi_wdata;
-  rand bit [STRB_WIDTH-1:0]  s_axi_wstrb;
+  rand bit [DATA_WIDTH-1:0]  s_axi_wdata[$:2**8];
+  rand bit [STRB_WIDTH-1:0]  s_axi_wstrb[$:2**8];
   rand bit                   s_axi_wlast;
   rand bit                   s_axi_wvalid;
   bit                        s_axi_wready;
