@@ -24,8 +24,8 @@ class axi_master_transaction extends uvm_sequence_item;
   //-------------------------------------------------------
   // WRITE DATA CHANNEL SIGNALS
   //-------------------------------------------------------
-  rand bit [DATA_WIDTH-1:0]  s_axi_wdata[$:2**8];
-  rand bit [STRB_WIDTH-1:0]  s_axi_wstrb[$:2**8];
+  rand bit [DATA_WIDTH-1:0]  s_axi_wdata[$:2**LENGTH];
+  rand bit [STRB_WIDTH-1:0]  s_axi_wstrb[$:2**LENGTH];
   rand bit                   s_axi_wlast;
   rand bit                   s_axi_wvalid;
   bit                        s_axi_wready;
@@ -106,7 +106,7 @@ class axi_master_transaction extends uvm_sequence_item;
   `uvm_object_utils_end
 
   
-  //------------------constraint------------------
+  //------------------write adresss constraint------------------
  
   
   //constraint to select burt length based on burst type
@@ -114,9 +114,14 @@ class axi_master_transaction extends uvm_sequence_item;
                                     s_axi_awlen inside{[0:15]};
                                      else if (s_axi_awburst== WRITE_INCR)
                                     s_axi_awlen inside{[0:255]};}
+  //constraint for write address
+//constraint for aligned write address
+  constraint alligned_write_address {  soft s_axi_awaddr  == (s_axi_awaddr % (2**s_axi_awsize )==0);}
  
- // WRITE DATA Constraints
-  //-------------------------------------------------------
+
+  //------------------write data constraint------------------
+
+  
   //Constraint : write_data_c1
   //Adding constraint to restrict the write data based on awlength
 constraint write_data_c1 {s_axi_wdata.size() == s_axi_awlen + 1;} 
@@ -136,7 +141,10 @@ constraint write_strobe_c2 {s_axi_wstrb.size() == s_axi_awlen + 1;}
                                   $countones (s_axi_wstrb) == 4;
                              }
 
- //constraint for read address
+
+  //------------------read adresss constraint------------------
+
+  
 //constraint for aligned read address
  constraint alligned_read_address {  soft s_axi_araddr  == (s_axi_araddr % (2**s_axi_arsize )==0);}
 
@@ -148,7 +156,11 @@ constraint write_strobe_c2 {s_axi_wstrb.size() == s_axi_awlen + 1;}
                                                        s_axi_arlen  inside { [0:255]}; }  
   
   
-  extern function new (string name = "axi_master_trasaction");
-  extern function void do_print(uvm_printer printer);
-    
+  extern function new (string name = "axi_master_trasaction");    
 endclass
+
+    
+//--------------------------------------------------------------------------------------------
+function axi_master_transaction::new(string name = "axi_master_transaction");
+  super.new(name);
+endfunction : new
