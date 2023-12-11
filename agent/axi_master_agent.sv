@@ -10,9 +10,9 @@ class axi_master_agent extends uvm_agent;
 
 
   //Handles for the driver, monitor, sequencer
-   axi_master_driver axi_drv_h;
+   axi_master_driver axi_master_drv_h;
   axi_master_monitor axi_master_mon_h;
-  axi_master_sequencer axi_seqr_h;
+  axi_master_sequencer axi_master_seqr_h;
 
 
   //---------------------------------------------------------------------
@@ -57,8 +57,8 @@ function void axi_master_agent::build_phase(uvm_phase phase);
 
   if(get_is_active() == UVM_ACTIVE)
   begin
-    m_drv  = axi_master_driver::type_id::create("m_drv", this);
-    m_seqr = axi_master_sequencer::type_id::create("m_seqr", this);
+     axi_master_drv_h  = axi_master_driver::type_id::create("axi_master_drv_h", this);
+    axi_master_seqr_h = axi_master_sequencer::type_id::create("axi_master_seqr_h", this);
   end
 
 endfunction : build_phase
@@ -72,7 +72,7 @@ endfunction : build_phase
 
 function void axi_master_agent::connect_phase(uvm_phase phase);
   if(get_is_active() == UVM_ACTIVE) 
-    m_drv.seq_item_port.connect(seqr.seq_item_export);
+    axi_master_drv_h.seq_item_port.connect(axi_master_seqr_h.seq_item_export);
 endfunction : connect_phase
 
 ///////////////////////////////////////////////////////////////////////////
