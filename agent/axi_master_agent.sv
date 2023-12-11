@@ -10,9 +10,9 @@ class axi_master_agent extends uvm_agent;
 
 
   //Handles for the driver, monitor, sequencer
-  axi_master_driver m_drv;
-  axi_master_monitor m_mon;
-  axi_master_sequencer m_seqr;
+   axi_master_driver axi_drv_h;
+  axi_master_monitor axi_mon_h;
+  axi_master_sequencer axi_seqr_h;
 
 
   //---------------------------------------------------------------------
