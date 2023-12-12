@@ -44,8 +44,8 @@ bit[127:0] read_fail[int];
 int temp_write[$];
 int temp_read[$];
 int burst_size;
-int success;
-int failure;
+int success_count;
+int failure_count;
 
 function axi_master_scoreboard::write(input axi_master_sequence_item req);
 //WRITE
@@ -109,13 +109,15 @@ endfunction
    foreach(write_success[i]) begin
       if(read_success.exits(i))begin
         if(read_success[i] == write_success[i]) begin
-        success++;
-        `uvm_info("Write enable is high and Read enable is low", $sformatf("i_wren: %0b i_rden: %0b i_wrdata: %0d count: %0d o_full: %0b o_empty: %0b o_alm_full: %0b o_alm_empty: %0b",req1.i_wren, req1.i_rden,req1.i_wrdata, count, req1.o_full,req1.o_empty,req1.o_alm_full,req1.o_alm_empty), UVM_LOW);
+        success_count++;
+          `uvm_info("SUCCESS", $sformatf("write_success[%0h]: %0d read_success[%0h]: %0d success_count: %0d failure_count: %0d",i,write_success[i],i,read_success[i], success_count, failure_count), UVM_LOW);
         end
-        else
-          fail++;
-        //display;
-        read_success.delete(i);
+        else begin
+          failure_count++;
+            `uvm_info("FAIL", $sformatf("write_success[%0h]: %0d read_success[%0h]: %0d success_count: %0d failure_count: %0d",i,write_success[i],i,read_success[i], success_count, failure_count), UVM_LOW);
+        end
+          read_success.delete(i);
+           `uvm_info("Deleted Address",$sformatf(read_success[%0h]: %0d",i,read_success[i]),UVM_LOW);
      end
    end
  endfunction
