@@ -2,6 +2,9 @@
 //  Class: axi_master_agent
 //  axi_master_agent is extended from uvm_agent, uvm_agent is inherited by uvm_component.
 //------------------------------------------------------------------------//
+`include "axi_master_driver.sv"
+`include "axi_master_monitor.sv"
+`include "axi_master_sequencer.sv"
 
 class axi_master_agent extends uvm_agent;
 
