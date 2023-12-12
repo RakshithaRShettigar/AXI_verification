@@ -104,12 +104,6 @@ end
   
 endfunction
  
-    
-  foreach (write_failure[i]) begin
-      if(read_sucess.exits(i)) begin
-        read_sucess[i] != write_failure[i];
-        failure++;
-        //display;
        
  function void check_1();
    foreach(write_success[i]) begin
