@@ -116,7 +116,7 @@ endfunction
       if(read_success.exits(i))begin
         if(read_success[i] == write_success[i]) begin
         success++;
-        //display;
+        `uvm_info("Write enable is high and Read enable is low", $sformatf("i_wren: %0b i_rden: %0b i_wrdata: %0d count: %0d o_full: %0b o_empty: %0b o_alm_full: %0b o_alm_empty: %0b",req1.i_wren, req1.i_rden,req1.i_wrdata, count, req1.o_full,req1.o_empty,req1.o_alm_full,req1.o_alm_empty), UVM_LOW);
         end
         else
           fail++;
