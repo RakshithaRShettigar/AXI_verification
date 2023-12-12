@@ -1,5 +1,5 @@
 `include "axi_master_interface.sv"
-`include "axi_master_test.sv"
+`include "axi_base_test.sv"
 `include "axi_ram.v"
 
 module axi_master_top;
