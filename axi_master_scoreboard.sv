@@ -98,7 +98,7 @@ else if(s_axi_arburst == 1) begin
    if(s_axi_rresp == OKAY) begin
         for(int i = 0; i <= s_axi_arlen; i++) begin
           read_success[temp_read.pop_front()] = s_axi_rddata[i];
-          check()1;
+          check_1();
           check_3();
         end
   else if(s_axi_rresp == SLVERR) begin
