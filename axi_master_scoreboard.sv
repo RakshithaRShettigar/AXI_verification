@@ -117,8 +117,10 @@ endfunction
             `uvm_info("FAIL", $sformatf("write_success[%0h]: %0d read_success[%0h]: %0d success_count: %0d failure_count: %0d",i,write_success[i],i,read_success[i], success_count, failure_count), UVM_LOW);
         end
           read_success.delete(i);
-           `uvm_info("Deleted Address",$sformatf(read_success[%0h]: %0d",i,read_success[i]),UVM_LOW);
+        `uvm_info("Deleted Address",$sformatf("read_success[%0h]: %0d",i,read_success[i]),UVM_LOW);
      end
+     `uvm_info("WRITE_SUCCESS",$sformat("write_success:%0p",write_success),UVM_LOW);
+     `uvm_info("READ_SUCCESS",$sformat("read_success:%0p",read_success),UVM_LOW);
    end
  endfunction
 
@@ -126,13 +128,16 @@ function void check_2();
          foreach(write_success[i]) begin
            if(read_fail.exits(i))begin
              if(read_fail[i] != write_success[i]) begin
-        success++;
-        //display;
+        success_count++;
+               `uvm_info("SLAVE_ERROR SUCCESS", $sformatf("write_success[%0h]: %0d read_success[%0h]: %0d success_count: %0d failure_count: %0d",i,write_success[i],i,read_success[i], success_count, failure_count), UVM_LOW);
         end
-        else
-          fail++;
-        //display;
-        read_fail.delete(i);
+        else begin
+          failure_count++;
+             `uvm_info("SLAVE_ERROR FAIL", $sformatf("write_success[%0h]: %0d read_success[%0h]: %0d success_count: %0d failure_count: %0d",i,write_success[i],i,read_success[i], success_count, failure_count), UVM_LOW);
+        end
+          read_fail.delete(i);
+              `uvm_info("Deleted Address",$sformatf(read_success[%0h]: %0d",i,read_success[i]),UVM_LOW);
+             
   end
   end    
 endfunction
@@ -141,11 +146,11 @@ endfunction
            if(read_fail.exits(i))begin
              if(read_fail[i] != write_success[i]) begin
         success++;
-        //display;
+         `uvm_info("SUCCESS", $sformatf("write_success[%0h]: %0d read_success[%0h]: %0d success_count: %0d failure_count: %0d",i,write_success[i],i,read_success[i], success_count, failure_count), UVM_LOW);
         end
         else
           fail++;
-        //display;
+        `uvm_info("FAIL", $sformatf("write_success[%0h]: %0d read_success[%0h]: %0d success_count: %0d failure_count: %0d",i,write_success[i],i,read_success[i], success_count, failure_count), UVM_LOW);
         read_fail.delete(i);
   end
   end    
