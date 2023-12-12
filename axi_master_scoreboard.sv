@@ -80,11 +80,13 @@ end
 if(req.s_axi_arburst == 0) begin
   if(req.s_axi_rresp == OKAY) begin
     read_success[s_axi_araddr] = s_axi_rddata[s_axi_arlen];
-  
+    check_1();
+    check_3();
     end
   end
  else if(s_axi_rresp == SLVERR) begin
         read_fail[s_axi_araddr] = s_axi_rddata[s_axi_arlen];
+   check_2();
    end 
 end
 else if(s_axi_arburst == 1) begin
@@ -96,9 +98,12 @@ else if(s_axi_arburst == 1) begin
    if(s_axi_rresp == OKAY) begin
         for(int i = 0; i <= s_axi_arlen; i++) begin
           read_success[temp_read.pop_front()] = s_axi_rddata[i];
+          check()1;
+          check_3();
         end
   else if(s_axi_rresp == SLVERR) begin
         read_fail[temp_read.pop_front()] = s_axi_rddata[i];
+    check_2();
    end 
 end
   
