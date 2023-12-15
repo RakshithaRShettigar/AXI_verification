@@ -4,7 +4,7 @@
 // Class : axi_master_base_sequence
 // Creating master_base_seq extends from uvm_sequence
 //--------------------------------------------------------------------------------------------
-class axi_master_base_sequence extends uvm_sequence#(axi_master_sequence_item);
+class axi_master_base_sequence extends uvm_sequence#(axi_master_transaction);
   `uvm_object_utils(axi_master_base_sequence)
 
 

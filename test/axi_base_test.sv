@@ -10,9 +10,9 @@ class axi_base_test extends uvm_test;
    // factory registration  
   `uvm_component_utils(axi_base_test)
 
-  // Variable: axi_env_h
+  // Variable: axi_master_environmet_h
   // Handle for environment 
-  axi_env axi_env_h;
+  axi_master_environmet axi_env_h;
 
 //--------------------------------------------------------------------------------------------
 // Construct: new
@@ -39,7 +39,7 @@ function void axi_base_test::build_phase(uvm_phase phase);
   super.build_phase(phase);
   
   // Create the environment
-  axi_env_h = axi_env::type_id::create("axi_env_h",this);
+  axi_master_environmet_h = axi_env::type_id::create("axi_env_h",this);
 endfunction : build_phase
 
 //--------------------------------------------------------------------------------------------

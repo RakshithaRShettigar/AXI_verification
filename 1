@@ -1,13 +1,11 @@
 import uvm_pkg::*;
- `include "uvm_macros.svh"
+//import axi_test_pkg::*;
 
 `include "globals/axi4_globals_pkg.sv"
-`include "axi_ram.v"
 `include "axi_master_interface.sv"
-`include "axi_master_scoreboard.sv"
-`include "agent/axi_master_agent.sv"
-`include "axi_master_environment.sv"
 `include "axi_base_test.sv"
+`include "axi_ram.v"
+
 
 module axi_master_top;
 

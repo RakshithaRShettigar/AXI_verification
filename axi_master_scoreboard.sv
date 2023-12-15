@@ -29,7 +29,8 @@ extern virtual function void write(input axi_master_sequence_item req);
 
 // DEFINING THE CLASS CONSTRUCTOR OUTSIDE THE CLASS USING SCOPE RESOLUTION OPERATOR
 
-function axi4_master_scoreboard::new(string name = " axi4_master_scoreboard ", uvm_component parent = null);
+function axi4_master_scoreboard::new(string name = " axi4_master_scoreboard ", uvm_component
+  parent = null);:
 super.new(name, parent);
 // CREATING ANALYSIS IMPORT
 axi_seq_item_imp = new("axi_seq_item_imp",this);

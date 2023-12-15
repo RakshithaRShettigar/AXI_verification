@@ -3,15 +3,13 @@
 // axi_base test has the test scenarios for testbench 
 // Sequences are created and started in the test
 //--------------------------------------------------------------------------------------------
-
 class axi_base_test extends uvm_test;
-
-   // factory registration  
-  `uvm_component_utils(axi_base_test)
+ // factory registration  
+`uvm_component_utils(axi_base_test)
 
   // Variable: axi_env_h
   // Handle for environment 
-  axi_env axi_env_h;
+  axi_master_environment axi_env_h;
 
 //--------------------------------------------------------------------------------------------
 // Construct: new

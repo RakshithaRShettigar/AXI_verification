@@ -33,7 +33,7 @@ package axi4_globals_pkg;
   //Parameter: DATA_WIDTH
   //Used to set the data width 
   parameter int DATA_WIDTH = 32;
-
+  parameter int ID_WIDTH = 8;
   //Parameter: SLAVE_MEMORY_SIZE
   //Sets the memory size of the slave in KB
  // parameter int SLAVE_MEMORY_SIZE = 12;
@@ -70,7 +70,7 @@ package axi4_globals_pkg;
   //Used to declare the enum type of write burst type
   typedef enum bit [1:0] {
     WRITE_FIXED    = 2'b00,
-    WRITE_INCR     = 2'b01,
+    WRITE_INCR     = 2'b01
     // WRITE_WRAP     = 2'b10,
     // WRITE_RESERVED = 2'b11
   } awburst_e;
@@ -79,7 +79,7 @@ package axi4_globals_pkg;
   //Used to declare the enum type of read burst type
   typedef enum bit [1:0] {
     READ_FIXED    = 2'b00,
-    READ_INCR     = 2'b01,
+    READ_INCR     = 2'b01
     // READ_WRAP     = 2'b10,
     // READ_RESERVED = 2'b11
   } arburst_e;
@@ -101,7 +101,7 @@ package axi4_globals_pkg;
   typedef enum bit [2:0] {
     WRITE_1_BYTE    = 3'b000,
     WRITE_2_BYTES   = 3'b001,
-    WRITE_4_BYTES   = 3'b010,
+    WRITE_4_BYTES   = 3'b010
     // WRITE_8_BYTES   = 3'b011,
     // WRITE_16_BYTES  = 3'b100,
     // WRITE_32_BYTES  = 3'b101,
@@ -114,7 +114,7 @@ package axi4_globals_pkg;
   typedef enum bit [2:0] {
     READ_1_BYTE    = 3'b000,
     READ_2_BYTES   = 3'b001,
-    READ_4_BYTES   = 3'b010,
+    READ_4_BYTES   = 3'b010
     // READ_8_BYTES   = 3'b011,
     // READ_16_BYTES  = 3'b100,
     // READ_32_BYTES  = 3'b101,
@@ -125,14 +125,14 @@ package axi4_globals_pkg;
   //Enum: awlock_e
   //Used to declare enum type for write lock access
   typedef enum bit {
-    WRITE_NORMAL_ACCESS    = 1'b0,
+    WRITE_NORMAL_ACCESS    = 1'b0
    // WRITE_EXCLUSIVE_ACCESS = 1'b1
   } awlock_e;
 
   //Enum: arlock_e
   //Used to declare enum type for read lock access
   typedef enum bit {
-    READ_NORMAL_ACCESS    = 1'b0,
+    READ_NORMAL_ACCESS    = 1'b0
   //  READ_EXCLUSIVE_ACCESS = 1'b1
   } arlock_e;
 
