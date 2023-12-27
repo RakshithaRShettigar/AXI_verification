@@ -55,7 +55,7 @@ class axi_master_transaction extends uvm_sequence_item;
   // READ DATA CHANNEL SIGNALS 
   //-------------------------------------------------------
   rand rid_e                      s_axi_rid;
-  bit [DATA_WIDTH-1:0]       s_axi_rdata;
+  bit [DATA_WIDTH-1:0]       s_axi_rdata[$:2**LENGTH];
   bit [1:0]                  s_axi_rresp;
   bit                        s_axi_rlast;
   bit                        s_axi_rvalid;
@@ -118,7 +118,7 @@ constraint write_strobe_c2 {s_axi_wstrb.size() == s_axi_awlen + 1;}
                                                        s_axi_arlen  inside { [0:255]}; }   
   
   
-  extern function new (string name = "axi_master_trasaction");    
+  extern function new (string name = "axi_master_transaction");    
 endclass
 
     

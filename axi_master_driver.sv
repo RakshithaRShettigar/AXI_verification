@@ -70,7 +70,7 @@ endtask
 task axi_master_driver::axi_write_task();
   fork
     //WRITE ADDRESS CHANNEL LOGIC
-	begin: WRITE ADDRESS CHANNEL
+	begin: WRITE_ADDRESS_CHANNEL
       if(req.s_axi_awvalid)
         begin
          @(posedge vif.axi_master_dr_mp.clk)
@@ -88,9 +88,9 @@ task axi_master_driver::axi_write_task();
                vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_awvalid <= req.s_axi_awvalid;
             end
           end
-	end: WRITE ADDRESS CHANNEL
+	end: WRITE_ADDRESS_CHANNEL
  // WRITE DATA CHANNEL LOGIC
-	begin: WRITE DATA 
+	begin: WRITE_DATA_CHANNEL 
 
       if(req.s_axi_wvalid)
         begin
@@ -98,7 +98,7 @@ task axi_master_driver::axi_write_task();
           begin
             if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_wready)
                   begin
-                    int len = int `(req.s_axi_awlen);
+                    int len = int '(req.s_axi_awlen);
                     for(int i=0;i<=len;i++)
                       begin
                     	vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_wdata <= req.s_axi_wdata.pop_front();
@@ -114,9 +114,9 @@ task axi_master_driver::axi_write_task();
           end
         end
  
-    end: WRITE DATA CHANNEL
+    end: WRITE_DATA_CHANNEL
       // WRITE RESPONSE CHANNEL LOGIC
-    begin: WRITE RESPONSE CHANNEL
+    begin: WRITE_RESPONSE_CHANNEL
       if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_bvalid)
         begin
           @(posedge vif.axi_master_dr_mp.clk)
@@ -126,7 +126,8 @@ task axi_master_driver::axi_write_task();
                req.s_axi_bvalid <= 1'b1;
               end
           end
-	end: WRITE RESPONSE CHANNEL
+        end
+	end: WRITE_RESPONSE_CHANNEL
 join
  
 endtask: axi_write_task
@@ -137,7 +138,7 @@ task axi_master_driver::axi_read_task();
 begin
 fork
   // READ ADDRESS CHANNEL LOGIC
-	begin: READ ADDRESS CHANNEL
+	begin: READ_ADDRESS_CHANNEL
       if(req.s_axi_arvalid)
         begin
           @(posedge vif.axi_master_dr_mp.clk)
@@ -155,10 +156,11 @@ fork
               vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_arvalid <= 1'b1;
             end
         end
-    end: READ ADDRESS CHANNEL
+      end
+    end: READ_ADDRESS_CHANNEL
       
  // READ DATA CHANNEL LOGIC
-	begin: READ DATA CHANNEL
+	begin: READ_DATA_CHANNEL
       if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_rvalid)
         begin
           if(req.s_axi_rready)
@@ -166,8 +168,8 @@ fork
               vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_rready <= 1'b1;
             end
         end
-    end: READ DATA CHANNEL
+    end: READ_DATA_CHANNEL
  
 join
- 
+end 
 endtask : axi_read_task

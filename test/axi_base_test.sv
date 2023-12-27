@@ -12,7 +12,7 @@ class axi_base_test extends uvm_test;
 
   // Variable: axi_master_environmet_h
   // Handle for environment 
-  axi_master_environmet axi_env_h;
+  axi_master_environment axi_master_env_h;
 
 //--------------------------------------------------------------------------------------------
 // Construct: new
@@ -23,7 +23,7 @@ class axi_base_test extends uvm_test;
 //  parent - parent under which this component is created
 //--------------------------------------------------------------------------------------------
 
-function axi_base_test::new(string name = "axi_base_test",uvm_component parent = null);
+function new(string name = "axi_base_test",uvm_component parent = null);
   super.new(name, parent);
 endfunction : new
 
@@ -35,11 +35,11 @@ endfunction : new
 //  phase - uvm phase
 //--------------------------------------------------------------------------------------------
 
-function void axi_base_test::build_phase(uvm_phase phase);
+function void build_phase(uvm_phase phase);
   super.build_phase(phase);
   
   // Create the environment
-  axi_master_environmet_h = axi_env::type_id::create("axi_env_h",this);
+  axi_master_env_h = axi_master_environment::type_id::create("axi_master_env_h",this);
 endfunction : build_phase
 
 //--------------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ endfunction : build_phase
 //  phase - uvm phase
 //--------------------------------------------------------------------------------------------
 
-task axi_base_test::run_phase(uvm_phase phase);
+task run_phase(uvm_phase phase);
 
   phase.raise_objection(this, "axi_base_test");
 

@@ -1,0 +1,125 @@
+# vsim -c work.axi_master_top 
+# Start time: 13:59:09 on Dec 27,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(61): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(61): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(63): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(63): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(63): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(63): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(64): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(64): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(65): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(65): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(66): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(66): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(67): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(67): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(68): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(68): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(69): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(69): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(70): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(70): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(71): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(71): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(81): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(81): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(81): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(81): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(83): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(83): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(84): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(84): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(86): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(86): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(102): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(102): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(102): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(102): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(103): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(103): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(104): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(104): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(115): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(115): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(115): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(115): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(116): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(116): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(117): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(117): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(118): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(118): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(119): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(119): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(120): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(120): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(121): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(121): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(122): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(122): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(123): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(123): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(132): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(132): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(132): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(132): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(134): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(134): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(135): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(135): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(137): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(137): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(138): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(138): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(64): An enum variable 'this.req_op.s_axi_awid' of type 'awid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awid' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(67): An enum variable 'this.req_op.s_axi_awsize' of type 'awsize_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awsize' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(68): An enum variable 'this.req_op.s_axi_awburst' of type 'awburst_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awburst' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(69): An enum variable 'this.req_op.s_axi_awlock' of type 'awlock_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awlock' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(70): An enum variable 'this.req_op.s_axi_awcache' of type 'awcache_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awcache' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(71): An enum variable 'this.req_op.s_axi_awprot' of type 'awprot_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awprot' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(103): An enum variable 'this.req_op.s_axi_bid' of type 'bid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bid' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(104): An enum variable 'this.req_op.s_axi_bresp' of type 'bresp_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bresp' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(116): An enum variable 'this.req_op.s_axi_arid' of type 'arid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arid' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(119): An enum variable 'this.req_op.s_axi_arsize' of type 'arsize_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arsize' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(120): An enum variable 'this.req_op.s_axi_arburst' of type 'arburst_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arburst' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(121): An enum variable 'this.req_op.s_axi_arlock' of type 'arlock_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arlock' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(122): An enum variable 'this.req_op.s_axi_arcache' of type 'arcache_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arcache' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(123): An enum variable 'this.req_op.s_axi_arprot' of type 'arprot_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arprot' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(134): An enum variable 'this.req_op.s_axi_rid' of type 'rid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rid' requires an explicit cast.
+# ** Error: Unable to refresh module axi_master_top(fast)
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(64): An enum variable 'this.req_op.s_axi_awid' of type 'awid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awid' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(67): An enum variable 'this.req_op.s_axi_awsize' of type 'awsize_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awsize' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(68): An enum variable 'this.req_op.s_axi_awburst' of type 'awburst_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awburst' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(69): An enum variable 'this.req_op.s_axi_awlock' of type 'awlock_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awlock' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(70): An enum variable 'this.req_op.s_axi_awcache' of type 'awcache_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awcache' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(71): An enum variable 'this.req_op.s_axi_awprot' of type 'awprot_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awprot' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(103): An enum variable 'this.req_op.s_axi_bid' of type 'bid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bid' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(104): An enum variable 'this.req_op.s_axi_bresp' of type 'bresp_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bresp' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(116): An enum variable 'this.req_op.s_axi_arid' of type 'arid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arid' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(119): An enum variable 'this.req_op.s_axi_arsize' of type 'arsize_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arsize' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(120): An enum variable 'this.req_op.s_axi_arburst' of type 'arburst_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arburst' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(121): An enum variable 'this.req_op.s_axi_arlock' of type 'arlock_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arlock' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(122): An enum variable 'this.req_op.s_axi_arcache' of type 'arcache_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arcache' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(123): An enum variable 'this.req_op.s_axi_arprot' of type 'arprot_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arprot' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(134): An enum variable 'this.req_op.s_axi_rid' of type 'rid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rid' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(64): An enum variable 'this.req_op.s_axi_awid' of type 'awid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awid' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(67): An enum variable 'this.req_op.s_axi_awsize' of type 'awsize_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awsize' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(68): An enum variable 'this.req_op.s_axi_awburst' of type 'awburst_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awburst' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(69): An enum variable 'this.req_op.s_axi_awlock' of type 'awlock_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awlock' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(70): An enum variable 'this.req_op.s_axi_awcache' of type 'awcache_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awcache' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(71): An enum variable 'this.req_op.s_axi_awprot' of type 'awprot_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awprot' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(103): An enum variable 'this.req_op.s_axi_bid' of type 'bid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bid' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(104): An enum variable 'this.req_op.s_axi_bresp' of type 'bresp_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bresp' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(116): An enum variable 'this.req_op.s_axi_arid' of type 'arid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arid' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(119): An enum variable 'this.req_op.s_axi_arsize' of type 'arsize_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arsize' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(120): An enum variable 'this.req_op.s_axi_arburst' of type 'arburst_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arburst' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(121): An enum variable 'this.req_op.s_axi_arlock' of type 'arlock_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arlock' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(122): An enum variable 'this.req_op.s_axi_arcache' of type 'arcache_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arcache' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(123): An enum variable 'this.req_op.s_axi_arprot' of type 'arprot_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arprot' requires an explicit cast.
+# ** Error (suppressible): (vopt-8386) monitor/axi_master_monitor.sv(134): An enum variable 'this.req_op.s_axi_rid' of type 'rid_e' may only be assigned the same enum typed variable or one of its values. Value 'vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rid' requires an explicit cast.
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 2.
+# Error loading design
+# End time: 13:59:14 on Dec 27,2023, Elapsed time: 0:00:05
+# Errors: 47, Warnings: 72
