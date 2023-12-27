@@ -1,46 +1,46 @@
-//AXI4_MASTER_DRIVER IS THE USER DEFINED CLASS WHICH EXTENDS FROM UVM_DRIVER (PREDEFINED DRIVER CLASS) AND THE AXI4_MASTER_TRANSACTION IS PASSED AS A PARAMETER
+//axi_MASTER_DRIVER IS THE USER DEFINED CLASS WHICH EXTENDS FROM UVM_DRIVER (PREDEFINED DRIVER CLASS) AND THE axi_MASTER_TRANSACTION IS PASSED AS A PARAMETER
 
-class axi4_master_driver extends uvm_driver #(axi4_master_transaction); 
+class axi_master_driver extends uvm_driver #(axi_master_transaction); 
   // VIRTUAL INTERFACE HANDLE
   virtual axi_master_interface vif;
   semaphore write_addr_data=new(1);
   // TRANSACTION HANDLE
-  axi4_master_transaction req;
+  axi_master_transaction req;
   
  // FACTORY REGISTRATION
 // REGISTERING THE USER DEFINED CLASS IN THE LUT
-`uvm_component_utils (axi4_master_driver)
+`uvm_component_utils (axi_master_driver)
   
   // DECLARING FUNCTIONS & TASKS EXTERNALLY
  
-extern function new(string name = "axi4_master_driver", uvm_component parent = null);
+extern function new(string name = "axi_master_driver", uvm_component parent = null);
  
 extern virtual function void build_phase(uvm_phase phase);
  
 extern virtual task run_phase(uvm_phase phase);
  
-extern virtual task axi4_write_task();
+extern virtual task axi_write_task();
  
-extern virtual task axi4_read_task();
+extern virtual task axi_read_task();
  
-endclass : axi4_master_driver
+endclass : axi_master_driver
   
   // DEFINING THE CLASS CONSTRUCTOR OUTSIDE THE CLASS USING SCOPE RESOLUTION OPERATOR
  
-function axi4_master_driver::new(string name = "axi4_master_driver", uvm_component parent = null);
+function axi_master_driver::new(string name = "axi_master_driver", uvm_component parent = null);
 	super.new(name, parent);
  
 endfunction: new
  
 // DEFINING BUILD PHASE OUTSIDE THE CLASS USING SCOPE RESOLUTION OPERATOR
-function void axi4_master_driver::build_phase(uvm_phase phase);
+function void axi_master_driver::build_phase(uvm_phase phase);
   super.build_phase(phase);
-  if(!uvm_config_db #(virtual axi4_interface)::get(this, " ", "virtual_interface", vif))
+  if(!uvm_config_db #(virtual axi_interface)::get(this, " ", "virtual_interface", vif))
       `uvm_fatal("Driver:", "No virtual interface is found!");
  
 endfunction: build_phase
  
-task axi4_master_driver::run_phase(uvm_phase phase);
+task axi_master_driver::run_phase(uvm_phase phase);
   forever
     begin
       if(!vif.rst) //CHECKING FOR RESET CONDITION
@@ -58,16 +58,16 @@ task axi4_master_driver::run_phase(uvm_phase phase);
           
           //WRITE-READ TASK DECLARED INSIDE FORK-JOIN (without begin-end) FOR PARALELL PROCESSING
           fork 
-    	    axi4_write_task();
-    	    axi4_read_task();
+    	    axi_write_task();
+    	    axi_read_task();
           join
         end
       seq_item_port.item_done();// SEQUENCE-DRIVER HANDSHAKE MECHANISM
     end
 endtask
  
- //AXI4 MASTER DRIVER WRITE TASK 
-task axi4_master_driver::axi4_write_task();
+ //axi MASTER DRIVER WRITE TASK 
+task axi_master_driver::axi_write_task();
   fork
     //WRITE ADDRESS CHANNEL LOGIC
 	begin: WRITE ADDRESS CHANNEL
@@ -87,6 +87,7 @@ task axi4_master_driver::axi4_write_task();
                vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_awprot <= req.s_axi_awprot;
                vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_awvalid <= req.s_axi_awvalid;
             end
+          end
 	end: WRITE ADDRESS CHANNEL
  // WRITE DATA CHANNEL LOGIC
 	begin: WRITE DATA 
@@ -128,11 +129,11 @@ task axi4_master_driver::axi4_write_task();
 	end: WRITE RESPONSE CHANNEL
 join
  
-endtask: axi4_write_task
+endtask: axi_write_task
  
-      // AXI4 READ TASK
+      // axi READ TASK
  
-task axi4_master_driver::axi4_read_task();
+task axi_master_driver::axi_read_task();
 begin
 fork
   // READ ADDRESS CHANNEL LOGIC
@@ -169,4 +170,4 @@ fork
  
 join
  
-endtask : axi4_read_task
+endtask : axi_read_task

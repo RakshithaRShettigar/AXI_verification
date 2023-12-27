@@ -2,7 +2,9 @@
 // Class: axi4_master_tx
 // This class holds the data items required to drive the stimulus to dut
 //--------------------------------------------------------------------------------------------
-
+//import uvm_pkg::*;
+//`include "uvm_macros.svh"
+//import axi4_globals_pkg::*;
 class axi_master_transaction extends uvm_sequence_item;
   `uvm_object_utils(axi_master_transaction)
   
@@ -12,7 +14,7 @@ class axi_master_transaction extends uvm_sequence_item;
   // WRITE ADDRESS CHANNEL SIGNALS
   //------------------------------------------------------- 
   rand awid_e            s_axi_awid;
-  rand bit [ADDR_WIDTH-1:0]  s_axi_awaddr;
+  rand bit [ADDRESS_WIDTH-1:0]  s_axi_awaddr;
   rand bit [7:0]             s_axi_awlen;
   rand awsize_e              s_axi_awsize;
   rand awburst_e             s_axi_awburst;
@@ -25,7 +27,7 @@ class axi_master_transaction extends uvm_sequence_item;
   // WRITE DATA CHANNEL SIGNALS
   //-------------------------------------------------------
   rand bit [DATA_WIDTH-1:0]  s_axi_wdata[$:2**LENGTH];
-  rand bit [STRB_WIDTH-1:0]  s_axi_wstrb[$:2**LENGTH];
+  rand bit [STROBE_WIDTH-1:0]  s_axi_wstrb[$:2**LENGTH];
   rand bit                   s_axi_wlast;
   rand bit                   s_axi_wvalid;
   bit                        s_axi_wready;
@@ -40,7 +42,7 @@ class axi_master_transaction extends uvm_sequence_item;
   // READ ADDRESS CHANNEL SIGNALS
   //-------------------------------------------------------
   rand arid_e                s_axi_arid;
-  rand bit [ADDR_WIDTH-1:0]  s_axi_araddr;
+  rand bit [ADDRESS_WIDTH-1:0]  s_axi_araddr;
   rand bit [7:0]             s_axi_arlen;
   rand arsize_e              s_axi_arsize;
   rand arburst_e             s_axi_arburst;
@@ -52,7 +54,7 @@ class axi_master_transaction extends uvm_sequence_item;
   //-------------------------------------------------------
   // READ DATA CHANNEL SIGNALS 
   //-------------------------------------------------------
-  rid_e                      s_axi_rid;
+  rand rid_e                      s_axi_rid;
   bit [DATA_WIDTH-1:0]       s_axi_rdata;
   bit [1:0]                  s_axi_rresp;
   bit                        s_axi_rlast;
@@ -63,47 +65,7 @@ class axi_master_transaction extends uvm_sequence_item;
   //Utility and Field macros
   //---------------------------------------
    
-  `uvm_object_utils_begin(axi_master_transaction)
-  `uvm_field_int(s_axi_awid, UVM_ALL_ON)
-  `uvm_field_int(s_axi_awaddr, UVM_ALL_ON)
-  `uvm_field_int(s_axi_awlen, UVM_ALL_ON)
-  `uvm_field_int(s_axi_awsize, UVM_ALL_ON)
-  `uvm_field_int(s_axi_awburst, UVM_ALL_ON)
-  `uvm_field_int(s_axi_awlock, UVM_ALL_ON)
-  `uvm_field_int(s_axi_awcache, UVM_ALL_ON)
-  `uvm_field_int(s_axi_awprot, UVM_ALL_ON)
-  `uvm_field_int(s_axi_awvalid, UVM_ALL_ON)
-  `uvm_field_int(s_axi_awready, UVM_ALL_ON)
-
-  `uvm_field_int(s_axi_wdata, UVM_ALL_ON)
-  `uvm_field_int(s_axi_wstrb, UVM_ALL_ON)
-  `uvm_field_int(s_axi_wlast, UVM_ALL_ON)
-  `uvm_field_int(s_axi_wvalid, UVM_ALL_ON)
-  `uvm_field_int(s_axi_wready, UVM_ALL_ON)
-
-  `uvm_field_int(s_axi_bid, UVM_ALL_ON)
-  `uvm_field_int(s_axi_bresp, UVM_ALL_ON)
-  `uvm_field_int(s_axi_bvalid, UVM_ALL_ON)
-  `uvm_field_int(s_axi_bready, UVM_ALL_ON)
-
-  `uvm_field_int(s_axi_arid, UVM_ALL_ON)
-  `uvm_field_int(s_axi_araddr, UVM_ALL_ON)
-  `uvm_field_int(s_axi_arlen, UVM_ALL_ON)
-  `uvm_field_int(s_axi_arsize, UVM_ALL_ON)
-  `uvm_field_int(s_axi_arburst, UVM_ALL_ON)
-  `uvm_field_int(s_axi_arlock, UVM_ALL_ON)
-  `uvm_field_int(s_axi_arcache, UVM_ALL_ON)
-  `uvm_field_int(s_axi_arprot, UVM_ALL_ON)
-  `uvm_field_int(s_axi_arvalid, UVM_ALL_ON)
-  `uvm_field_int(s_axi_arready, UVM_ALL_ON)
-
-  `uvm_field_int(s_axi_rid, UVM_ALL_ON)
-  `uvm_field_int(s_axi_rdata, UVM_ALL_ON)
-  `uvm_field_int(s_axi_rresp, UVM_ALL_ON)
-  `uvm_field_int(s_axi_rlast, UVM_ALL_ON)
-  `uvm_field_int(s_axi_rvalid, UVM_ALL_ON)
-  `uvm_field_int(s_axi_rready, UVM_ALL_ON)
-  `uvm_object_utils_end
+  
 
   
   //------------------write adresss constraint------------------
@@ -135,7 +97,7 @@ constraint write_strobe_c2 {s_axi_wstrb.size() == s_axi_awlen + 1;}
   //This constraint is used to decide the s_axi_awdata size based on s_axi_awsize
   constraint write_strobe_c3{if(s_axi_awsize == WRITE_1_BYTE)
   						$countones (s_axi_wstrb) == 1;
-                             else if(s_axi_awsize == WRITE_2_BYTE)
+                             else if(s_axi_awsize == WRITE_2_BYTES)
                                     $countones (s_axi_wstrb) == 2;
                               else 
                                   $countones (s_axi_wstrb) == 4;
@@ -150,10 +112,10 @@ constraint write_strobe_c2 {s_axi_wstrb.size() == s_axi_awlen + 1;}
 
 
 //constraint for read burst length
-  constraint read_burst_length { if(  s_axi_arburst == READ_FIXED 
-                                                    s_axi_arlen  inside { [ 0 : 15] } ;
-                                                   else if s_axi_arburst == READ_INCR
-                                                       s_axi_arlen  inside { [0:255]}; }  
+  constraint read_burst_length { if(  s_axi_arburst == READ_FIXED ){
+                                                    s_axi_arlen  inside { [ 0 : 15] }} ;
+                                                   else if (s_axi_arburst == READ_INCR)
+                                                       s_axi_arlen  inside { [0:255]}; }   
   
   
   extern function new (string name = "axi_master_trasaction");    

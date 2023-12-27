@@ -19,13 +19,13 @@ class axi4_master_scoreboard extends uvm_scoreboard;
 `uvm_component_utils (axi4_master_scoreboard)
 
 // PORT DECLARATIONS FOR CONNECTION BETWEEN MONITOR AND SCOREBOARD
-uvm_analysis_imp#(req, axi4_master_scoreboard)axi_seq_item_imp;
+uvm_analysis_imp#(axi_master_transaction, axi4_master_scoreboard)axi_seq_item_imp;
 
 // DECLARING EXTERNAL FUNCTION "NEW" (CLASS CONSTRUCTOR)
 extern function new(string name = " axi4_master_scoreboard ", uvm_component parent = null);
 
 // DECLARING EXTERNAL FUNCTION WRITE
-extern virtual function void write(input axi_master_sequence_item req);
+extern virtual function void write(input axi_master_transaction req);
 
 // DEFINING THE CLASS CONSTRUCTOR OUTSIDE THE CLASS USING SCOPE RESOLUTION OPERATOR
 

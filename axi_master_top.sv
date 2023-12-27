@@ -1,13 +1,19 @@
 import uvm_pkg::*;
  `include "uvm_macros.svh"
 
-`include "globals/axi4_globals_pkg.sv"
+import axi4_globals_pkg::*;
+//`include "globals/axi4_globals_pkg.sv"
 `include "axi_ram.v"
 `include "axi_master_interface.sv"
-`include "axi_master_scoreboard.sv"
+`include "axi_master_transaction.sv"
+`include "axi_master_sequence/axi_master_base_sequence.sv"
+`include "axi_master_sequencer.sv"
+`include "axi_master_driver.sv"
+`include "monitor/axi_master_monitor.sv"
 `include "agent/axi_master_agent.sv"
+`include "axi_master_scoreboard.sv"
 `include "axi_master_environment.sv"
-`include "axi_base_test.sv"
+`include "test/axi_base_test.sv"
 
 module axi_master_top;
 
