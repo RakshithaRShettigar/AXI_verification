@@ -66,6 +66,67 @@ function void axi_master_monitor::from_class(input axi_master_transaction req_in
   $cast(req_op.s_axi_bid,req_in.s_axi_bid);
   $cast(req_op.s_axi_bresp,req_in.s_axi_bresp);
   req_op.s_axi_awaddr=req_in.s_axi_awaddr;
+
+  foreach(req_in.wdata[i]) begin
+    if(req_in.wdata[i] != 0)begin
+      req_op.wdata[i] = req_in.wdata[i];
+     // `uvm_info("axi_master_seq_item_conv_class",$sformatf("After converting wdata =  %0p",req_op.wdata),UVM_HIGH);
+    end
+  end
+
+  foreach(req_in.wdata[i]) begin
+    if(req_in.wdata[i] != 0)begin
+      req_op.wstrb[i] = req_in.wstrb[i];
+      //  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting wstrb = %0p",req_op.wstrb[i]),UVM_HIGH);
+    end
+  end
+
+
+    req_op.wlast = req_in.wlast;
+  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting wlast =  %0h",req_op.wlast),UVM_HIGH);
+
+
+  //read channel
+  $cast(req_op.arid,req_in.arid);
+  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting arid =  %b",req_op.arid),UVM_HIGH);
+
+  $cast(req_op.arlen,req_in.arlen);
+  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After conrveting arlen =  %b",req_op.arlen),UVM_HIGH);
+
+  $cast(req_op.arsize,req_in.arsize);
+  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting arsize =  %b",req_op.arsize),UVM_HIGH);
+
+  $cast(req_op.arburst,req_in.arburst);
+  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting arburst =  %b",req_op.arburst),UVM_HIGH);
+
+  $cast(req_op.arlock,req_in.arlock);
+  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting arlock =  %b",req_op.arlock),UVM_HIGH);
+
+  $cast(req_op.arcache,req_in.arcache);
+  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting arcache =  %b",req_op.arcache),UVM_HIGH);
+
+  $cast(output_conv_h.arprot,req_in.arprot);
+  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting arprot =  %b",req_op.arprot),UVM_HIGH);
+
+  $cast(req_op.rresp,req_in.rresp);
+  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting rresp =  %b",req_op.rresp),UVM_HIGH);
+  
+  req_op.araddr = req_in.araddr;
+  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting araddr =  %0h",req_op.araddr),UVM_HIGH);
+
+  $cast(req_op.rid,input_conv_h.rid);
+  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting rid =  %b",req_op.rid),UVM_HIGH);
+
+  foreach(req_in.rdata[i]) begin
+    if(req_in.rdata[i] != 0)begin
+      req_op.rdata[i] = req_in.rdata[i];
+      `uvm_info("axi4_master_seq_item_conv_class",$sformatf("After converting rdata = %0p",req_op.rdata[i]),UVM_HIGH);
+    end
+  end
+
+  
+
+//  `uvm_info("axi4_master_seq_item_conv_class",$sformatf("----------------------------------------------------------------------"),UVM_HIGH);
 endfunction
 
 
