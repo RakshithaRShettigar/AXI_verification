@@ -30,10 +30,10 @@ task axi_master_write_32b_transfer::body();
   super.body();
   
   start_item(req);
-  if(!req.randomize() with {req.s_axi_arsize == WRITE_4_BYTES;
+  if(!req.randomize() with {req.s_axi_awsize == WRITE_4_BYTES;
                             req.s_axi_arvalid == 0;
                             req.s_axi_awvalid == 1;
-                            req.s_axi_arburst == WRITE_INCR;}) begin
+                            req.s_axi_awburst == WRITE_INCR;}) begin
 
     `uvm_fatal("axi4","Rand failed");
   end
