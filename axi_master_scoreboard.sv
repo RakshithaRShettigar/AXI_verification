@@ -1,8 +1,8 @@
 `ifndef AXI_MASTER_SCOREBOARD_INCLUDED_
 `define AXI_MASTER_SCOREBOARD_INCLUDED_
 
-  import uvm_pkg::*;
- `include "uvm_macros.svh"
+  //import uvm_pkg::*;
+ //`include "uvm_macros.svh"
 //--------------------------------------------------------------------------------------------
 // Class: axi_master_scoreboard
 // Scoreboard will get the data from the analysis port of the  monitor that goes into the implementation port

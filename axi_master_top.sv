@@ -1,8 +1,9 @@
+`timescale 1ns/1ps
 import uvm_pkg::*;
  `include "uvm_macros.svh"
 
 import axi4_globals_pkg::*;
-//`include "globals/axi4_globals_pkg.sv"
+`include "globals/axi4_globals_pkg.sv"
 `include "axi_ram.v"
 `include "axi_master_interface.sv"
 `include "axi_master_transaction.sv"
@@ -19,7 +20,6 @@ import axi4_globals_pkg::*;
 
 
 module axi_master_top;
-
 
 bit clk;
 bit rst;

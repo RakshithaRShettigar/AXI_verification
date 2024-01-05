@@ -1,8 +1,8 @@
-import uvm_pkg::*;
-`include "globals/axi4_globals_pkg.sv"
+//import uvm_pkg::*;
+//`include "globals/axi4_globals_pkg.sv"
 //`ifndef AXI4_IF_INCLUDED_
  	//`define AXI4_IF_INCLUDED_
-
+  `timescale 1ns / 1ps
   	interface axi_master_interface(input clk,rst);
      //Declare all output and ouput signals as logic
        logic    [8-1:0]    s_axi_awid;

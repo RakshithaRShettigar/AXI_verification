@@ -3,8 +3,8 @@
 //AXI_MASTER_MONITOR PSEUDOCODE:
 //-----------------------------------------------------------------------------------
 //axi_master_monitor is user-defined class which is extended from uvm_monitor which is a pre-defined uvm class
-import uvm_pkg::*;
-`include "uvm_macros.svh"
+//import uvm_pkg::*;
+//`include "uvm_macros.svh"
 class axi_master_monitor extends uvm_monitor;
 
 //Factory registration
@@ -27,10 +27,10 @@ extern virtual function void build_phase(uvm_phase phase);
 extern virtual function void connect_phase(uvm_phase phase);
 //extern virtual function void end_of_elaboration_phase(uvm_phase phase);
 extern virtual task run_phase(uvm_phase phase);
-extern function void from_class(input axi_master_transaction req_in, output axi_master_struct
-req_op);
-extern function void to_class(input axi_master_struct req_op, output axi_master_transaction
-req_in)
+//extern function void from_class(input axi_master_transaction req_in, output axi_master_struct
+//req_op);
+//extern function void to_class(input axi_master_struct req_op, output axi_master_transaction
+//req_in)
 endclass : axi_master_monitor
 
 //--------------------------------------------------------------------------------
@@ -57,7 +57,6 @@ endfunction : connect_phase
 task axi_master_monitor::run_phase(uvm_phase phase);
   forever begin : FOREVER
     if(!vif.aresetn) begin : LOW_RESET
-      axi_master_monitor::from_class(req_in,req_op);
     fork  //to ensure both read and write signals are monitored parallely
       begin : WRITE_PROCESS
           fork 
@@ -102,12 +101,12 @@ task axi_master_monitor::run_phase(uvm_phase phase);
 //                req_op.s_axi_wlast = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wlast;
 //                req_op.s_axi_wvalid  = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wvalid;
 //                req_op.s_axi_wready  = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wready;
-               $cast(req_op.s_axi_wdata[i] = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wdata;
-               $cast(req_op.s_axi_wstrb[i] = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wstrb;
+               $cast(req_op.s_axi_wdata[i], vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wdata);
+               $cast(req_op.s_axi_wstrb[i], vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wstrb);
                //req_op.s_axi_wuser[i] = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wuser;
-               $cast(req_op.s_axi_wlast = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wlast;
-               $cast(req_op.s_axi_wvalid  = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wvalid;
-               $cast(req_op.s_axi_wready  = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wready;
+               $cast(req_op.s_axi_wlast ,vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wlast);
+               $cast(req_op.s_axi_wvalid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wvalid);
+               $cast(req_op.s_axi_wready, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wready);
                 if(req_op.s_axi_wlast == 1) begin
                   i = 0;
                   break;

@@ -95,12 +95,14 @@ constraint write_strobe_c2 {s_axi_wstrb.size() == s_axi_awlen + 1;}
  
   //Constraint : write_strobe_c3
   //This constraint is used to decide the s_axi_awdata size based on s_axi_awsize
-  constraint write_strobe_c3{if(s_axi_awsize == WRITE_1_BYTE)
-  						$countones (s_axi_wstrb) == 1;
-                             else if(s_axi_awsize == WRITE_2_BYTES)
-                                    $countones (s_axi_wstrb) == 2;
-                              else 
-                                  $countones (s_axi_wstrb) == 4;
+  constraint write_strobe_c3{foreach(s_axi_wstrb[i]){
+                                 if(s_axi_awsize == WRITE_1_BYTE)
+  						                   $countones (s_axi_wstrb[i]) == 1;
+                                else if(s_axi_awsize == WRITE_2_BYTES)
+                                    $countones (s_axi_wstrb[i]) == 2;
+                                else 
+                                  $countones (s_axi_wstrb[i]) == 4;
+                                }
                              }
 
 
