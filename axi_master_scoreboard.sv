@@ -50,7 +50,7 @@ int failure_count;
 
 function write(input axi_master_transaction req);
 //WRITE
-  if(req.s_axi_awvalid && req.s_axi_awready && s_wvalid_
+if(req.s_axi_awvalid && req.s_axi_awready && req.s_axi_wvalid  && req.s_axi_wready && req.s_axi_bvalid && req.s_axi_bready) begin
 if(req.s_axi_awburst == 0) begin
   if(req.s_axi_bresp == OKAY) begin
     write_success[req.s_axi_awaddr] = req.s_axi_wdata[req.s_axi_awlen];
@@ -77,8 +77,9 @@ else if(req.s_axi_awburst == 1) begin
         end
    end
 end
-
+end
 //READ
+  if(req.s_axi_arvalid && req.s_axi_arready && req.s_axi_rvalid  && req.s_axi_rready ) begin
 if(req.s_axi_arburst == 0) begin
   if(req.s_axi_rresp == OKAY) begin
     read_success[req.s_axi_araddr] =req.s_axi_rdata[req.s_axi_arlen];
@@ -109,6 +110,7 @@ else if(req.s_axi_arburst == 1) begin
     check_2();
     end
    end 
+end
 end
   
 endfunction
