@@ -56,7 +56,7 @@ endfunction : connect_phase
 //Task: run phase
 task axi_master_monitor::run_phase(uvm_phase phase);
   forever begin : FOREVER
-    if(!vif.aresetn) begin : LOW_RESET
+    if(!vif.rst) begin : LOW_RESET
     fork  //to ensure both read and write signals are monitored parallely
       begin : WRITE_PROCESS
           fork 
