@@ -50,6 +50,7 @@ int failure_count;
 
 function write(input axi_master_transaction req);
 //WRITE
+  if(req.s_axi_awvalid && req.s_axi_awready && s_wvalid_
 if(req.s_axi_awburst == 0) begin
   if(req.s_axi_bresp == OKAY) begin
     write_success[req.s_axi_awaddr] = req.s_axi_wdata[req.s_axi_awlen];
