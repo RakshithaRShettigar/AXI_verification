@@ -35,7 +35,7 @@ endfunction: new
 // DEFINING BUILD PHASE OUTSIDE THE CLASS USING SCOPE RESOLUTION OPERATOR
 function void axi_master_driver::build_phase(uvm_phase phase);
   super.build_phase(phase);
-  if(!uvm_config_db #(virtual axi_master_interface)::get(this, " ", "virtual_interface", vif))
+	if(!uvm_config_db #(virtual axi_master_interface)::get(this, " ", "vif", vif))
       `uvm_fatal("Driver:", "No virtual interface is found!");
  
 endfunction: build_phase
