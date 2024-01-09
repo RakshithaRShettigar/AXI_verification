@@ -1,9 +1,9 @@
 `timescale 1ns/1ps
 import uvm_pkg::*;
  `include "uvm_macros.svh"
-
+`include "axi4_globals_pkg.sv"
 import axi4_globals_pkg::*;
-`include "globals/axi4_globals_pkg.sv"
+//`include "axi4_globals_pkg.sv"
 `include "axi_ram.v"
 `include "axi_master_interface.sv"
 `include "axi_master_transaction.sv"
@@ -75,6 +75,7 @@ axi_ram dut(
       );
 
   initial begin
+  `uvm_info("TOP",$sformatf("in top"),UVM_NONE);
     uvm_config_db#(virtual axi_master_interface)::set(null, "", "vif", tif);
     run_test("axi_master_write_16b_test");
   end
