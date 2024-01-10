@@ -54,15 +54,17 @@ task axi_master_driver::run_phase(uvm_phase phase);
         end
       else
         begin
+          `uvm_info("driver",$sformatf("before get next"),UVM_NONE);
           seq_item_port.get_next_item(req); // SEQUENCE-DRIVER HANDSHAKE MECHANISM
+          `uvm_info("driver",$sformatf("AFTER get next"),UVM_NONE);
           
           //WRITE-READ TASK DECLARED INSIDE FORK-JOIN (without begin-end) FOR PARALELL PROCESSING
           fork 
     	    axi_write_task();
     	    axi_read_task();
           join
-        end
       seq_item_port.item_done();// SEQUENCE-DRIVER HANDSHAKE MECHANISM
+    end
     end
 endtask
  

@@ -29,13 +29,14 @@ initial begin
   rst = 0;
   #5;
   rst = 1;
+//  `uvm_info("CLOCK", $sformatf("clk = %0d",clk), 
 end
 
 axi_master_interface tif (clk, rst);
 
 axi_ram dut(
-      .clk,
-      .rst,
+      .clk(clk),
+      .rst(rst),
 
       .s_axi_awid     (tif.s_axi_awid   ),
       .s_axi_awaddr   (tif.s_axi_awaddr ),
@@ -78,5 +79,6 @@ axi_ram dut(
   `uvm_info("TOP",$sformatf("in top"),UVM_NONE);
     uvm_config_db#(virtual axi_master_interface)::set(null, "", "vif", tif);
     run_test("axi_master_write_16b_test");
+    #500 $finish;
   end
 endmodule
