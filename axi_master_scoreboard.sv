@@ -48,7 +48,7 @@ int burst_size;
 int success_count;
 int failure_count;
 
-function write(input axi_master_transaction req);
+function void  write(input axi_master_transaction req);
 //WRITE
 if(req.s_axi_awvalid && req.s_axi_awready && req.s_axi_wvalid  && req.s_axi_wready && req.s_axi_bvalid && req.s_axi_bready) begin
 if(req.s_axi_awburst == 0) begin

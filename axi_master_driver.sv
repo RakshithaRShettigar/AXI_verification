@@ -43,8 +43,9 @@ endfunction: build_phase
 task axi_master_driver::run_phase(uvm_phase phase);
   forever
     begin
-      if(!vif.rst) //CHECKING FOR RESET CONDITION
+      if(vif.rst) //CHECKING FOR RESET CONDITION
         begin
+          $display("reset in driver = %0d at time %0t",vif.rst, $time);
           @(posedge vif.axi_master_dr_mp.clk)
           vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_arvalid <=0;
           //vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_rvalid <=0;
@@ -63,6 +64,7 @@ task axi_master_driver::run_phase(uvm_phase phase);
     	    axi_write_task();
     	    axi_read_task();
           join
+          `uvm_info("DRIVER after driving",$sformatf("AT TIME %0t virtual interface awvalid %0d, req awvalid %0d",$time, vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_awvalid,req.s_axi_awvalid), UVM_NONE);
       seq_item_port.item_done();// SEQUENCE-DRIVER HANDSHAKE MECHANISM
     end
     end
@@ -76,7 +78,7 @@ task axi_master_driver::axi_write_task();
       if(req.s_axi_awvalid)
         begin
          @(posedge vif.axi_master_dr_mp.clk)
-          if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_awready)
+         // if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_awready)
             begin
                write_addr_data.get(1);
                vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_awaddr <= req.s_axi_awaddr;
@@ -98,7 +100,7 @@ task axi_master_driver::axi_write_task();
         begin
           @(posedge vif.axi_master_dr_mp.clk)
           begin
-            if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_wready)
+           // if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_wready)
                   begin
                     int len = int '(req.s_axi_awlen);
                     for(int i=0;i<=len;i++)
@@ -145,7 +147,7 @@ fork
         begin
           @(posedge vif.axi_master_dr_mp.clk)
           begin
-            if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_arready)
+           // if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_arready)
               begin
               vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_arid <= req.s_axi_arid;
               vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_araddr <= req.s_axi_araddr;
@@ -165,7 +167,7 @@ fork
 	begin: READ_DATA_CHANNEL
       if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_rvalid)
         begin
-          if(req.s_axi_rready)
+         // if(req.s_axi_rready)
             begin
               vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_rready <= 1'b1;
             end

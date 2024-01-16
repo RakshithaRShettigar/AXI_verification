@@ -44,7 +44,7 @@
   //clocking blocks are used for synchronization between DUT and testbench
   //Clocking block for master driver
       clocking axi_master_dr_cb @(posedge clk);
-      default input #1 output #1;
+      default input #0 output #0;
       output       s_axi_awid;
       output      s_axi_awaddr;
       output              s_axi_awlen;

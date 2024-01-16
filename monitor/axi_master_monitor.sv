@@ -45,6 +45,8 @@ function void axi_master_monitor::build_phase(uvm_phase phase);
   super.build_phase(phase);
   if(!uvm_config_db#(virtual axi_master_interface)::get(this, "", "vif", vif))
       `uvm_fatal("Monitor: ", "No vif is found!")
+      else
+        `uvm_info("Monitor: ","Vif found",UVM_NONE)
   req_op = axi_master_transaction::type_id::create("req_op");
    
 endfunction : build_phase 
@@ -56,17 +58,23 @@ endfunction : connect_phase
 
 //Task: run phase
 task axi_master_monitor::run_phase(uvm_phase phase);
+
   forever begin : FOREVER
-    if(!vif.rst) begin : LOW_RESET
+     @(posedge vif.axi_master_mo_mp.clk);
+    if(!vif.axi_master_mo_mp.rst) begin : LOW_RESET
+      $display("at time %0t reset is %0d",$time, vif.rst);
     fork  //to ensure both read and write signals are monitored parallely
       begin : WRITE_PROCESS
           fork 
             begin : WRITE_ADDRESS
               //Taking data of write address channel
               do begin
+              `uvm_info("VALID READY", $sformatf("awvalid = %0d, awready = %0d",vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awvalid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awready),UVM_NONE);
+
                 @(posedge vif.axi_master_mo_mp.clk);
               end
               while(vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awvalid != 1 || vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awready != 1);
+              `uvm_info("VALID READY", $sformatf("awvalid = %0d, awready = %0d",vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awvalid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awready),UVM_NONE);
 //               req_op.s_axi_awid    = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awid ;
 //               req_op.s_axi_awaddr  = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awaddr;
 //               req_op.s_axi_awlen   = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awlen;
@@ -76,7 +84,7 @@ task axi_master_monitor::run_phase(uvm_phase phase);
 //               req_op.s_axi_awcache = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awcache;
 //               req_op.s_axi_awprot  = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awprot;
               
-              $cast(req_op.s_axi_awid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awid);
+//              $cast(req_op.s_axi_awid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awid);
               $cast(req_op.s_axi_awaddr, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awaddr);
               $cast(req_op.s_axi_awlen, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awlen);
               $cast(req_op.s_axi_awsize, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awsize);
@@ -154,7 +162,7 @@ task axi_master_monitor::run_phase(uvm_phase phase);
 //               req_op.s_axi_arprot  = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arprot;
 //               req_op.s_axi_arvalid = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arvalid;
 //               req_op.s_axi_arready = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arready;
-         $cast(req_op.s_axi_arid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arid);
+//         $cast(req_op.s_axi_arid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arid);
           $cast(req_op.s_axi_araddr, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_araddr);
           $cast(req_op.s_axi_arlen, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arlen);
           $cast(req_op.s_axi_arsize, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arsize);
@@ -179,7 +187,7 @@ task axi_master_monitor::run_phase(uvm_phase phase);
 //                req_op.s_axi_rlast = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rlast;
 //                req_op.s_axi_rvalid = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rvalid;
 //                req_op.s_axi_rvalid = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rvalid;
-              $cast(req_op.s_axi_rid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rid);
+ //             $cast(req_op.s_axi_rid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rid);
               $cast(req_op.s_axi_rdata[j], vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rdata);
               // req_op.s_axi_ruser = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_ruser;
               $cast(req_op.s_axi_rresp, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rresp);
