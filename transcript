@@ -1,6 +1,74 @@
 # vsim -c work.axi_master_top 
-# Start time: 10:13:50 on Jan 22,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 16:24:05 on Jan 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(63): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(63): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(64): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(64): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(76): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(76): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(76): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(76): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(88): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(88): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(89): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(89): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(90): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(90): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(91): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(91): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(92): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(92): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(93): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(93): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(94): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(94): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(105): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(105): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(105): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(105): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(113): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(113): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(114): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(114): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(116): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(116): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(136): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(136): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(136): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(136): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(141): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(141): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(142): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(142): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(154): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(154): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(154): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(154): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(166): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(166): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(167): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(167): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(168): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(168): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(169): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(169): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(170): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(170): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(171): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(171): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(172): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(172): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(181): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(181): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(181): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(181): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(191): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(191): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(193): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(193): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(194): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
+# ** Warning: (vopt-8637) monitor/axi_master_monitor.sv(194): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
 # //
@@ -126,56 +194,52 @@
 # UVM_INFO monitor/axi_master_monitor.sv(49) @ 0: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [Monitor: ] Vif found
 # UVM_INFO test/axi_base_test.sv(57) @ 0: uvm_test_top [axi_master_write_16b_test] Inside BASE_TEST
 # reset in driver = 1 at time 0
-# UVM_INFO axi_master_driver.sv(58) @ 10000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [driver] before get next
-# at time 10000 reset is 0
-# UVM_INFO monitor/axi_master_monitor.sv(72) @ 10000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = x, awready = x
-# UVM_INFO monitor/axi_master_monitor.sv(72) @ 20000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = x, awready = 0
-# UVM_INFO monitor/axi_master_monitor.sv(72) @ 30000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 0, awready = 1
-# UVM_INFO monitor/axi_master_monitor.sv(72) @ 40000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 0, awready = 1
-# UVM_INFO monitor/axi_master_monitor.sv(72) @ 50000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 0, awready = 1
-# UVM_INFO monitor/axi_master_monitor.sv(72) @ 60000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 0, awready = 1
-# UVM_INFO monitor/axi_master_monitor.sv(72) @ 70000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 0, awready = 1
-# UVM_INFO monitor/axi_master_monitor.sv(72) @ 80000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 0, awready = 1
-# UVM_INFO monitor/axi_master_monitor.sv(72) @ 90000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 0, awready = 1
-# UVM_INFO test/axi_base_test.sv(60) @ 100000: uvm_test_top [axi_master_write_16b_test] Done BASE_TEST
-# UVM_INFO test/axi_master_write_16b_test.sv(34) @ 100000: uvm_test_top [axi_master_write_16b_test] axi_master_write_16b_test
-# UVM_INFO monitor/axi_master_monitor.sv(72) @ 100000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 0, awready = 1
-# UVM_WARNING @ 100000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_seqr_h@@axi_master_write_16b_transfer_h [uvm_sequence_base] Body definition undefined
+# reset in driver = 1 at time 5000
+# UVM_INFO test/axi_base_test.sv(60) @ 15000: uvm_test_top [axi_master_write_16b_test] Done BASE_TEST
+# UVM_INFO test/axi_master_write_16b_test.sv(34) @ 15000: uvm_test_top [axi_master_write_16b_test] axi_master_write_16b_test
+# at time 15000 reset is 0
+# UVM_INFO monitor/axi_master_monitor.sv(72) @ 15000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = x, awready = 0
+# UVM_INFO axi_master_driver.sv(58) @ 15000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [driver] before get next
+# UVM_WARNING @ 15000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_seqr_h@@axi_master_write_16b_transfer_h [uvm_sequence_base] Body definition undefined
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 # Name                           Type                    Size  Value                                                                                         
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 # req                            axi_master_transaction  -     @697                                                                                          
-#   begin_time                   time                    64    100000                                                                                        
+#   begin_time                   time                    64    15000                                                                                         
 #   depth                        int                     32    'd2                                                                                           
 #   parent sequence (name)       string                  31    axi_master_write_16b_transfer_h                                                               
 #   parent sequence (full name)  string                  94    uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_seqr_h.axi_master_write_16b_transfer_h
 #   sequencer                    string                  62    uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_seqr_h                                
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------
-# UVM_INFO axi_master_driver.sv(60) @ 100000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [driver] AFTER get next
-# UVM_INFO axi_master_driver.sv(67) @ 110000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [DRIVER after driving] AT TIME 110000 virtual interface awvalid 1, req awvalid 1
-# UVM_INFO axi_master_driver.sv(58) @ 110000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [driver] before get next
-# UVM_INFO monitor/axi_master_monitor.sv(72) @ 110000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 0, awready = 1
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 110000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO axi_master_driver.sv(60) @ 15000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [driver] AFTER get next
+# UVM_INFO axi_master_driver.sv(67) @ 25000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [DRIVER after driving] AT TIME 25000 virtual interface awvalid 1, req awvalid 1
+# UVM_INFO axi_master_driver.sv(58) @ 25000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [driver] before get next
+# UVM_INFO monitor/axi_master_monitor.sv(72) @ 25000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 0, awready = 0
+# UVM_INFO monitor/axi_master_monitor.sv(72) @ 35000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 0, awready = 1
+# UVM_INFO monitor/axi_master_monitor.sv(77) @ 45000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 1, awready = 1
+# UVM_INFO monitor/axi_master_monitor.sv(119) @ 55000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [Monitor] wlast = 1
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 125000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   24
+# UVM_INFO :   18
 # UVM_WARNING :    1
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
 # [DRIVER after driving]     1
+# [Monitor]     1
 # [Monitor: ]     1
 # [Questa UVM]     2
 # [RNTST]     1
 # [TEST_DONE]     1
 # [TOP]     1
-# [VALID READY]    11
+# [VALID READY]     4
 # [axi_master_write_16b_test]     3
 # [driver]     3
 # [uvm_sequence_base]     1
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 110 ns  Iteration: 61  Instance: /axi_master_top
-# End time: 10:16:18 on Jan 22,2024, Elapsed time: 0:02:28
-# Errors: 0, Warnings: 37
+#    Time: 125 ns  Iteration: 54  Instance: /axi_master_top
+# End time: 16:24:12 on Jan 22,2024, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 105

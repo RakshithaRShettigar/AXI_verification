@@ -25,9 +25,9 @@ bit clk;
 bit rst;
 always #5 clk = ~clk;
 initial begin
-  clk = 1;
+//  clk = 1;
   rst = 1;
-  #5;
+  #6;
   rst = 0;
 //  `uvm_info("CLOCK", $sformatf("clk = %0d",clk), 
 end

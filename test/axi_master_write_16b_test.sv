@@ -34,6 +34,7 @@ task run_phase(uvm_phase phase);
   `uvm_info(get_type_name(),$sformatf("axi_master_write_16b_test"),UVM_LOW);
   phase.raise_objection(this);
     axi_master_write_16b_transfer_h .start(axi_master_env_h.axi_master_agt_h.axi_master_seqr_h);
+    #100;
   phase.drop_objection(this);
 
 endtask : run_phase
