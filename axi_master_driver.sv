@@ -165,7 +165,7 @@ fork
       
  // READ DATA CHANNEL LOGIC
 	begin: READ_DATA_CHANNEL
-      if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_rvalid)
+     // if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_rvalid)
         begin
          // if(req.s_axi_rready)
             begin

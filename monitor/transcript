@@ -13,12 +13,12 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim work.axi_master_top 
-# Start time: 16:45:18 on Jan 22,2024
+# Start time: 15:50:10 on Jan 23,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Error: (vopt-13130) Failed to find design unit axi_master_top.
 #         Searched libraries:
 #             work
 # Optimization failed
 # Error loading design
-# End time: 16:45:18 on Jan 22,2024, Elapsed time: 0:00:00
+# End time: 15:50:11 on Jan 23,2024, Elapsed time: 0:00:01
 # Errors: 1, Warnings: 0

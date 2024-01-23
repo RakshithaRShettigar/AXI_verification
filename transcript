@@ -13,26 +13,19 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim -novopt work.axi_master_top 
-# Start time: 14:54:29 on Jan 23,2024
+# Start time: 16:13:37 on Jan 23,2024
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# Refreshing /hwetools/work_area/frontend/rakshitharavindra/axi_new/AXI_verification/work.axi_master_top
-# Refreshing /hwetools/work_area/frontend/rakshitharavindra/axi_new/AXI_verification/work.axi_master_top_sv_unit
-# Refreshing /hwetools/work_area/frontend/rakshitharavindra/axi_new/AXI_verification/work.axi4_globals_pkg
 # Loading sv_std.std
 # Loading work.axi4_globals_pkg
 # Loading mtiUvm.uvm_pkg
 # Loading work.axi_master_top_sv_unit
 # Loading work.axi_master_top
-# Refreshing /hwetools/work_area/frontend/rakshitharavindra/axi_new/AXI_verification/work.axi_master_interface
 # Loading work.axi_master_interface
-# Refreshing /hwetools/work_area/frontend/rakshitharavindra/axi_new/AXI_verification/work.axi_ram
 # Loading work.axi_ram
 # Loading mtiUvm.questa_uvm_pkg
 # ** Warning: (vsim-8637) monitor/axi_master_monitor.sv(63): A modport ('axi_master_mo_mp') should not be used in a hierarchical path.
 #    Time: 0 ps  Iteration: 0  Region: /axi_master_top_sv_unit File: axi_master_top.sv
 # ** Warning: (vsim-8637) axi_master_driver.sv(172): A modport ('axi_master_dr_mp') should not be used in a hierarchical path.
-#    Time: 0 ps  Iteration: 0  Region: /axi_master_top_sv_unit::axi_master_driver File: axi_master_top.sv
-# ** Warning: (vsim-8637) axi_master_driver.sv(168): A modport ('axi_master_dr_mp') should not be used in a hierarchical path.
 #    Time: 0 ps  Iteration: 0  Region: /axi_master_top_sv_unit::axi_master_driver File: axi_master_top.sv
 # ** Warning: (vsim-8637) axi_master_driver.sv(160): A modport ('axi_master_dr_mp') should not be used in a hierarchical path.
 #    Time: 0 ps  Iteration: 0  Region: /axi_master_top_sv_unit::axi_master_driver File: axi_master_top.sv
@@ -93,7 +86,7 @@
 # ** Warning: (vsim-8637) axi_master_driver.sv(49): A modport ('axi_master_dr_mp') should not be used in a hierarchical path.
 #    Time: 0 ps  Iteration: 0  Region: /axi_master_top_sv_unit::axi_master_driver File: axi_master_top.sv
 # Loading /tools/mentor/questasim_10.6c/questasim/uvm-1.1d/linux/uvm_dpi.so
-add wave -position insertpoint sim:/axi_master_top/tif/*
+add wave -position insertpoint sim:/axi_master_top/dut/*
 run -a
 # ----------------------------------------------------------------
 # UVM-1.1d
@@ -129,6 +122,7 @@ run -a
 # at time 15000 reset is 0
 # UVM_INFO monitor/axi_master_monitor.sv(72) @ 15000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = x, awready = 0
 # UVM_INFO axi_master_driver.sv(58) @ 15000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [driver] before get next
+# write tr
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 # Name                           Type                    Size  Value                                                                                         
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -344,6 +338,20 @@ run -a
 # UVM_INFO monitor/axi_master_monitor.sv(119) @ 2035000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [Monitor] wlast = 0
 # UVM_INFO axi_master_driver.sv(67) @ 2035000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [DRIVER after driving] AT TIME 2035000 virtual interface awvalid 1, req awvalid 1
 # UVM_INFO axi_master_driver.sv(58) @ 2035000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [driver] before get next
+# read tr
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------
+# Name                           Type                    Size  Value                                                                                         
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------
+# req                            axi_master_transaction  -     @702                                                                                          
+#   begin_time                   time                    64    2035000                                                                                       
+#   depth                        int                     32    'd2                                                                                           
+#   parent sequence (name)       string                  31    axi_master_write_16b_transfer_h                                                               
+#   parent sequence (full name)  string                  94    uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_seqr_h.axi_master_write_16b_transfer_h
+#   sequencer                    string                  62    uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_seqr_h                                
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVM_INFO axi_master_driver.sv(60) @ 2035000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [driver] AFTER get next
+# UVM_INFO axi_master_driver.sv(67) @ 2045000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [DRIVER after driving] AT TIME 2045000 virtual interface awvalid 1, req awvalid 0
+# UVM_INFO axi_master_driver.sv(58) @ 2045000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_drv_h [driver] before get next
 # UVM_INFO monitor/axi_master_monitor.sv(119) @ 2045000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [Monitor] wlast = 0
 # UVM_INFO monitor/axi_master_monitor.sv(119) @ 2055000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [Monitor] wlast = 1
 # BEFORE WRITE PROCESS ENDS
@@ -359,30 +367,31 @@ run -a
 # UVM_INFO monitor/axi_master_monitor.sv(72) @ 2115000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 1, awready = 0
 # UVM_INFO monitor/axi_master_monitor.sv(72) @ 2125000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 1, awready = 0
 # UVM_INFO monitor/axi_master_monitor.sv(72) @ 2135000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 1, awready = 0
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 2135000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO monitor/axi_master_monitor.sv(72) @ 2145000: uvm_test_top.axi_master_env_h.axi_master_agt.axi_master_mon_h [VALID READY] awvalid = 1, awready = 0
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 2145000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :  225
+# UVM_INFO :  229
 # UVM_WARNING :    1
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
-# [DRIVER after driving]     1
+# [DRIVER after driving]     2
 # [Monitor]   202
 # [Monitor: ]     1
 # [Questa UVM]     2
 # [RNTST]     1
 # [TEST_DONE]     1
 # [TOP]     1
-# [VALID READY]    10
+# [VALID READY]    11
 # [axi_master_write_16b_test]     3
-# [driver]     3
+# [driver]     5
 # [uvm_sequence_base]     1
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 2135 ns  Iteration: 54  Instance: /axi_master_top
+#    Time: 2145 ns  Iteration: 54  Instance: /axi_master_top
 # 1
 # Break in Task uvm_pkg/uvm_root::run_test at /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
-# End time: 14:58:10 on Jan 23,2024, Elapsed time: 0:03:41
-# Errors: 0, Warnings: 33
+# End time: 16:22:26 on Jan 23,2024, Elapsed time: 0:08:49
+# Errors: 0, Warnings: 32
