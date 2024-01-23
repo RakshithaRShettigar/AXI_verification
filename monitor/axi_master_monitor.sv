@@ -73,7 +73,7 @@ task axi_master_monitor::run_phase(uvm_phase phase);
 
                 @(posedge vif.axi_master_mo_mp.clk);
               end
-              while(vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awvalid != 1 || vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awready != 1);
+              while(vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awvalid !== 1 || vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awready !== 1);
               `uvm_info("VALID READY", $sformatf("awvalid = %0d, awready = %0d",vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awvalid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awready),UVM_NONE);
 //               req_op.s_axi_awid    = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awid ;
 //               req_op.s_axi_awaddr  = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_awaddr;
@@ -102,7 +102,7 @@ task axi_master_monitor::run_phase(uvm_phase phase);
               do begin
                 @(posedge vif.axi_master_mo_mp.clk);
               end
-                while(vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wvalid != 1 || vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wready != 1);
+                while(vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wvalid !== 1 || vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wready !== 1);
               while(1) begin: WHILE_LOOP_WRITE
 //                req_op.s_axi_wdata[i] = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wdata;
 //                req_op.s_axi_wstrb[i] = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_wstrb;
@@ -133,7 +133,7 @@ task axi_master_monitor::run_phase(uvm_phase phase);
           do begin
             @(posedge vif.axi_master_mo_mp.clk);
           end
-          while(vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bvalid != 1 || vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bready != 1);
+          while(vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bvalid !== 1 || vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bready !== 1);
 //          req_op.s_axi_bid      = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bid;
 //          req_op.s_axi_bresp    = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bresp;
 //          req_op.s_axi_bvalid   = vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bvalid;
@@ -218,6 +218,8 @@ task axi_master_monitor::run_phase(uvm_phase phase);
       $cast(req_op.s_axi_arready, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_arready);
       $cast(req_op.s_axi_rvalid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rvalid);
       $cast(req_op.s_axi_rready, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_rready);
+      $display("AFTER FORK JOIN ANY OF MONITOR(BEFORE WRITE CALL");
+      $display("BVALID AND BREADY %0d %0d",req_op.s_axi_bvalid, req_op.s_axi_bready);
         item_got_port.write(req_op);
    // wait fork;
    end : LOW_RESET

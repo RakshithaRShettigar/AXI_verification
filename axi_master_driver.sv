@@ -121,13 +121,13 @@ task axi_master_driver::axi_write_task();
     end: WRITE_DATA_CHANNEL
       // WRITE RESPONSE CHANNEL LOGIC
     begin: WRITE_RESPONSE_CHANNEL
-      if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_bvalid)
+     // if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_bvalid)
         begin
-          @(posedge vif.axi_master_dr_mp.clk)
+  //        @(posedge vif.axi_master_dr_mp.clk)
           begin
-            if(req.s_axi_bready)
+           // if(req.s_axi_bvalid)
               begin
-               req.s_axi_bvalid <= 1'b1;
+               vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_bready <= 1'b1;
               end
           end
         end

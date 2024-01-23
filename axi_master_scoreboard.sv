@@ -50,7 +50,8 @@ int failure_count;
 
 function void  write(input axi_master_transaction req);
 //WRITE
-if(req.s_axi_awvalid && req.s_axi_awready && req.s_axi_wvalid  && req.s_axi_wready && req.s_axi_bvalid && req.s_axi_bready) begin
+$display("INSIDE WRITE FUNCTION OF SCOREBOARD");
+if(req.s_axi_bvalid && req.s_axi_bready) begin
 if(req.s_axi_awburst == 0) begin
   if(req.s_axi_bresp == OKAY) begin
     write_success[req.s_axi_awaddr] = req.s_axi_wdata[req.s_axi_awlen];
@@ -70,11 +71,13 @@ else if(req.s_axi_awburst == 1) begin
         for(int i = 0; i <= req.s_axi_awlen; i++) begin
           write_success[temp_write.pop_front()] = req.s_axi_wdata[i];
         end
+        $display("WRITE SUCCESS ARRAY: %0p",write_success);
       end
    else if(req.s_axi_bresp == SLVERR) begin
         for(int i = 0; i <= req.s_axi_awlen; i++) begin
           write_fail[temp_write.pop_front()] = req.s_axi_wdata[i];
         end
+        $display("WRITE FAIL ARRAY: %0p",write_fail);
    end
 end
 end
