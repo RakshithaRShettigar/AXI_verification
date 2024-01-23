@@ -143,7 +143,8 @@ task axi_master_monitor::run_phase(uvm_phase phase);
             //$cast(req_op.s_axi_bvalid, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bvalid);
             //$cast(req_op.s_axi_bready, vif.axi_master_mo_mp.axi_master_mo_cb.s_axi_bready);
             
-          end : WRITE_RESPONSE   
+          end : WRITE_RESPONSE  
+          $display("BEFORE WRITE PROCESS ENDS");
       end : WRITE_PROCESS
       
         begin : READ_PROCESS

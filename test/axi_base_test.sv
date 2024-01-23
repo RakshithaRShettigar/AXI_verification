@@ -56,8 +56,9 @@ task run_phase(uvm_phase phase);
 
   `uvm_info(get_type_name(), $sformatf("Inside BASE_TEST"), UVM_NONE);
   super.run_phase(phase);
-  #15;
+//  #15;
   `uvm_info(get_type_name(), $sformatf("Done BASE_TEST"), UVM_NONE);
+//  phase.phase_done.set_drain_time(this, 150);
   phase.drop_objection(this);
 
 endtask : run_phase

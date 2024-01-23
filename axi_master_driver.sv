@@ -98,13 +98,13 @@ task axi_master_driver::axi_write_task();
 
       if(req.s_axi_wvalid)
         begin
-          @(posedge vif.axi_master_dr_mp.clk)
           begin
            // if(vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_wready)
                   begin
                     int len = int '(req.s_axi_awlen);
                     for(int i=0;i<=len;i++)
                       begin
+                      @(posedge vif.axi_master_dr_mp.clk)
                     	vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_wdata <= req.s_axi_wdata.pop_front();
                     	vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_wstrb <= req.s_axi_wstrb.pop_front();
                   		vif.axi_master_dr_mp.axi_master_dr_cb.s_axi_wvalid <= 1'b1;
